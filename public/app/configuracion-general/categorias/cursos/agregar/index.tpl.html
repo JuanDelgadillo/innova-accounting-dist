@@ -1,0 +1,155 @@
+<form name="cursoForm" ng-submit="save()" role="form" novalidate>
+    <div class="modal-header bgm-morado-popup">
+        <h4 class="modal-title ">
+            <i class="flaticon-curso ico-25 p-r-5"></i> Categorías
+            <i class="zmdi zmdi-caret-right"></i> Clase grupal
+            <span class="pull-right modalClose" ng-click="$dismiss('cancel')" ><i class="zmdi zmdi-close"></i></span>
+        </h4>
+    </div>
+  <div class="modal-body">
+    <div class="card-body">
+        <div class="row p-r-15 p-l-15 p-t-30">
+           <div class="form-group col-sm-4" ng-class="{ 'has-error': !cursoForm.nombreCurso.$valid && cursoForm.nombreCurso.$touched || cursoForm.$submitted && !cursoForm.nombreCurso.$valid }">
+               <div class="fg-line">
+                    <label for="nombreCurso" class="f-500 c-black m-b-15 ">Nombre <span class="c-red">*</span></label>
+                    <input type="text" class="form-control input-sm" name="nombreCurso" ng-model="curso.nombre" ng-required="true" placeholder="Ej: Aprendiendo a bailar" ng-trim="false" maxlength="40" >
+                </div>
+                <span ng-show="cursoForm.$submitted || cursoForm.nombreCurso.$touched">
+                    <small class="help-block error-span" ng-show="cursoForm.nombreCurso.$error.required">El nombre es requerido.</small>
+                </span>
+           </div>
+
+           <div class="form-group col-sm-4" ng-class="{ 'has-error': !cursoForm.generoCurso.$valid && cursoForm.generoCurso.$touched || cursoForm.$submitted && !cursoForm.generoCurso.$valid }">
+               <div class="fg-line">
+                    <label for="telefonoSede" class="f-500 c-black m-b-15 ">Género <span class="c-red">* </span> </label> <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-title="Género" popover-trigger="mouseenter" popover="Desde esta área podrás seleccionar o escoger el género que permites participar dentro del curso." title="Ayuda de Easy Dance" ></i>
+                    <div class="select">
+                        <select class="form-control" name="generoCurso" ng-model="curso.genero" ng-required="true">
+                            <option value="">- Seleccione -</option>
+                            <option value="Ambos">Ambos</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
+                        </select>
+                    </div>
+                </div>
+                <span ng-show="cursoForm.$submitted || cursoForm.generoCurso.$touched">
+                    <small class="help-block error-span" ng-show="cursoForm.generoCurso.$error.required">El genero es requerido.</small>
+                </span>
+           </div> 
+
+            <div class="form-group col-sm-4" ng-class="{ 'has-error': !cursoForm.edadesCurso.$valid && cursoForm.edadesCurso.$touched || cursoForm.$submitted && !cursoForm.edadesCurso.$valid }">
+                <div class="fg-line">
+                    <label class="f-500 c-black m-b-15 ">Edad <span class="c-red">*</span></label>
+                            (Desde-Hasta)
+                    <input type="text" autocomplete="off" maxlength="7" class="form-control ng-isolate-scope" name="edadesCurso" data-input-mask="{mask: '00 - 00' }" ng-required="true" ng-model="curso.edades" placeholder="Ej: 12 - 16" >
+                </div>
+                <span ng-show="cursoForm.$submitted || cursoForm.edadesCurso.$touched">
+                    <small class="help-block error-span" ng-show="cursoForm.edadesCurso.$error.required">El rango de edades es requerido.</small>
+                </span>
+            </div>
+
+            <div class="row p-r-15 p-l-15">
+
+                <div class="form-group col-xs-12 col-sm-4" ng-class="{ 'has-error': !cursoForm.costoInscripcionCurso.$valid && cursoForm.costoInscripcionCurso.$touched || cursoForm.$submitted && !cursoForm.costoInscripcionCurso.$valid }">
+                    <div class="fg-line">
+                        <label class="f-500 c-black m-b-15 ">Costo de inscripción <span class="c-red">*</span></label>
+                        <input type="text" class="form-control input-sm" name="costoInscripcionCurso" ng-pattern="/^[0-9]{1,}$/" ng-model="curso.costoInscripcion" ng-required="true" placeholder="Ej: 2000" ng-trim="false" maxlength="7">
+                    </div>
+                    <span ng-show="cursoForm.$submitted || cursoForm.costoInscripcionCurso.$touched">
+                        <small class="help-block error-span" ng-show="cursoForm.costoInscripcionCurso.$error.required">El costo de inscripción es requerido.</small>
+                        <small class="help-block error-span" ng-show="cursoForm.costoInscripcionCurso.$error.pattern">El costo de inscripción debe ser un número.</small>
+                    </span>
+                </div>
+
+                <div class="form-group col-xs-12 col-sm-4" ng-class="{ 'has-error': !cursoForm.costoCurso.$valid && cursoForm.costoCurso.$touched || cursoForm.$submitted && !cursoForm.costoCurso.$valid }">
+                    <div class="fg-line">
+                        <label class="f-500 c-black m-b-15 ">Costo de la clase <span class="c-red">*</span></label>
+                        <input type="text" class="form-control input-sm" ng-required="true" ng-model="curso.costoCurso" name="costoCurso" ng-pattern="/^[0-9]{1,}$/" placeholder="Ej: 4000" ng-trim="false" maxlength="7">
+                    </div>
+                    <span ng-show="cursoForm.$submitted || cursoForm.costoCurso.$touched">
+                        <small class="help-block error-span" ng-show="cursoForm.costoCurso.$error.required">El costo del curso es requerido.</small>
+                        <small class="help-block error-span" ng-show="cursoForm.costoCurso.$error.pattern">El costo del curso debe ser un número.</small>
+                    </span>
+                </div>
+
+                <div class="form-group col-sm-4" ng-class="{ 'has-error': !cursoForm.frecuenciaPagoCurso.$valid && cursoForm.frecuenciaPagoCurso.$touched || cursoForm.$submitted && !cursoForm.frecuenciaPagoCurso.$valid }">
+                    <label class="f-500 c-black">Frecuencia de pago <span class="c-red">*</span></label>
+                        <div class="fg-line">
+                            <div class="select">
+                                <select class="form-control" ng-required="true" name="frecuenciaPagoCurso" ng-model="curso.frecuencia_pago">
+                                    <option value="">- Seleccione -</option>
+                                    <option value="Mensual">Mensual</option>
+                                    <option value="Trimestral">Trimestral</option>
+                                    <option value="Semestral">Semestral</option>
+                                    <option value="Anual">Anual</option>                  
+                                </select>
+                            </div>
+                        </div>
+                         <span ng-show="cursoForm.$submitted || cursoForm.frecuenciaPagoCurso.$touched">
+                            <small class="help-block error-span" ng-show="cursoForm.frecuenciaPagoCurso.$error.required">La frecuencia de pago es requerida.</small>
+                        </span>
+                </div>
+
+            </div> 
+         
+            <div class="row p-r-15 p-l-15">
+             <div class="form-group col-sm-4 " ng-class="{ 'has-error': !cursoForm.impuestoCurso.$valid && cursoForm.impuestoCurso.$touched || cursoForm.$submitted && !cursoForm.impuestoCurso.$valid }">
+                <label class="f-500 c-black">Impuesto <span class="c-red">*</span></label>
+                <div class="fg-line">
+                    <div class="select">
+                        <select class="form-control" ng-required="true" name="impuestoCurso" ng-model="curso.impuesto">
+                            <option value="">- Seleccione -</option>
+                            <option value="Incluye">Incluye</option>
+                            <option value="No incluye">No incluye</option>               
+                        </select>
+                    </div>
+                </div>
+                <span ng-show="cursoForm.$submitted || cursoForm.impuestoCurso.$touched">
+                    <small class="help-block error-span" ng-show="cursoForm.impuestoCurso.$error.required">Debe seleccionar si incluye impuesto.</small>
+                </span>
+            </div>
+
+    
+            <!--<div class="form-group fg-line col-sm-8">
+                <label for="descripcionCargaIncial" class="f-500 c-black m-b-15 ">Descripción <span class="c-red">*</span>  </label>
+                <div class="form-group">
+                    <div class="fg-line">
+                        <textarea class="form-control" id="descripcionCargaIncial" rows="5" placeholder="Descripción de la Academia" ng-model="descripcion" ng-trim="false" maxlength="1500"></textarea>                
+                            </div><small class="pull-right"> {{500 - descripcion.length}} caracteres restantes</small>
+                        </div>
+            </div>--> 
+            <div class="form-group fg-line col-sm-4">
+            <label for="imagen" class="f-500 c-black m-b-15">Imagen</label>
+            <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-trigger="mouseenter" popover-title="Imagen:" popover="Utiliza una imagen con referencia al curso que estás ofertando, esta imagen será pública y podrán visualizarla tus alumnos." title="Ayuda de Easy Dance" ></i>
+            <br>
+            <div class="fileinput fileinput-new" data-provides="fileinput">
+                <span class="btn btn-primary btn-file">
+                    <span class="fileinput-new">Seleccionar imagen</span>
+                    <span class="fileinput-exists">Cambiar</span>
+                    <input type="file" name="imagen" ng-model="cursoForm.imagen" />
+                </span>
+                <span class="fileinput-filename"></span>
+                <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <label for="notaCurs" class="f-500 c-black m-b-10 ">Descripción</label>
+            <div class="form-group">
+                <div class="fg-line">
+                    <textarea class="form-control" ng-model="curso.descripcion" rows="4" ng-trim="false" maxlength="300"></textarea>
+                </div>
+                <small class="pull-right"> {{300 - curso.descripcion.length}} caracteres restantes</small>
+            </div>
+        </div>
+
+                
+
+         </div>
+        </div>
+    </div>   
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-primary waves-effect">Guardar</button>
+    <button type="button"  ng-click="$dismiss('cancel')" class="btn btn-default waves-effect">Cancelar</button> 
+  </div>
+</form>

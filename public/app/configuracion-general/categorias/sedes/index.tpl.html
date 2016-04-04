@@ -1,0 +1,50 @@
+
+<div class="container">
+    <div class="block-header">
+        <h2>Sucursales</h2>
+
+    </div>
+    
+    <!-- TABS -->
+    <div class="card">
+        <div class="card-body card-padding p-b-30">
+            <form role="form">
+                <div class="card-body">
+                <div class="row p-r-15 p-l-15 p-b-10 p-t-30">
+                   <div class="form-group fg-line col-xs-12 col-sm-4">
+                        <label for="nombreSede" class="f-500 c-black m-b-15 ">Nombre <span class="c-red">*</span></label>
+                        <input type="text" class="form-control input-sm" id="nombreSede" placeholder="Nombre" ng-trim="false" maxlength="100">
+                   </div>
+                   <div class="form-group fg-line col-xs-12 col-sm-4">
+                        <label for="LugarSede" class="f-500 c-black m-b-15 ">Lugar <span class="c-red">*</span></label>
+                        <input type="text" class="form-control input-sm" id="LugarSede" placeholder="Lugar">
+                   </div>  
+                   <div class="form-group fg-line col-xs-12 col-sm-4">
+                        <label for="telefonoSede" class="f-500 c-black m-b-15 ">Teléfono <span class="c-red">*</span></label>
+                        <input type="text" class="form-control input-sm" id="telefonoSede" placeholder="Teléfono" ng-trim="false" maxlength="15" >
+                   </div>
+                   
+                   <div class="form-group fg-line col-xs-12 col-sm-4">
+                        <label for="coordinadorSede" class="f-500 c-black m-b-15 ">Coordinador <span class="c-red">*</span></label>
+                        <input type="text" class="form-control input-sm" id="coordinadorSede" placeholder="Coordinador responsable">
+                   </div>
+                   <div class="form-group fg-line col-xs-12 col-sm-4">
+                        <label for="CorreoSede" class="f-500 c-black m-b-15 ">Correo electrónico <span class="c-red">*</span></label>
+                        <input type="text" class="form-control input-sm" id="CorreoSede" placeholder="Ej: easydancelatino@gmail.com">
+                   </div>
+                   <div class="form-group fg-line col-xs-4">
+                        <label for="direccionSede" class="f-500 c-black m-b-15 ">Dirección <span class="c-red">*</span></label>
+                        <input type="text" class="form-control input-sm" id="direccionSede" placeholder="Dirección" ng-trim="false" maxlength="500" ng-model="sucursal.direccionSede" >
+                   </div>   
+                   <small class="pull-right"> {{500 - sucursal.direccionSede.length}} caracteres restantes</small>  
+                </div>
+                </div>   
+                
+                <button type="submit" class="btn btn-primary waves-effect">Enviar</button>
+                <button type="button" class="btn btn-default waves-effect">Cancelar</button>               
+                
+            </form>
+            
+            
+        </div>
+    </div>

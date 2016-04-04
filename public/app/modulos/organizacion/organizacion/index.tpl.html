@@ -1,0 +1,141 @@
+<div class="card m-r-10 m-l-10 m-b-10">
+    <form name="oForm" ng-submit="save()" novalidate>
+        <div class="card-header bgm-innova-toolbar">
+
+            <button class="btn" type="submit">
+                <img src="assets/img/master-icons/boton_principal_guardar.png" width="50" alt="">
+                <div class="caption">
+                    Guardar
+                </div>
+            </button>
+            <button class="btn" type="button" ng-click="newItem()">
+                <img src="assets/img/master-icons/boton_principal_cancelar.png" width="50" alt="">
+                <div class="caption">
+                    Cancelar
+                </div>
+            </button>
+            <button class="btn" ng-click="warning_click()">
+                <img src="assets/img/master-icons/boton_principal_importar.png" width="50" alt="">
+                <div class="caption">
+                    Importar
+                </div>
+            </button>
+            <button class="btn" type="button" ng-click="remove()">
+                <img src="assets/img/master-icons/boton_principal_borrar.png" width="50" alt="">
+                <div class="caption">
+                    Borrar
+                </div>
+            </button>
+            <button class="btn" ng-click="warning_click()">
+                <img src="assets/img/master-icons/boton_principal_imprimir.png" width="50" alt="">
+                <div class="caption">
+                    Imprimir
+                </div>
+            </button>
+            <button class="btn" ng-click="warning_click()">
+                <img src="assets/img/master-icons/boton_principal_salir.png" width="50" alt="">
+                <div class="caption">
+                    Salir
+                </div>
+            </button>
+
+
+            <ul class="actions actions-alt m-t-25 title-modules">
+                <h2>Monedas</h2>
+            </ul>
+        </div>
+        <div class="card-body card-padding">
+            <div class="row">
+                <div class="col-sm-4">
+                     <div class="card">
+                    <div class="card-header">
+                        <h2>Organizacion<small></small></h2>
+                    </div>
+
+                    <div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Codigo</th>
+                                <th>Descripcion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in list" ng-click="loadDataToForm(item)">
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ item.codigo }}</td>
+                                <td>{{ item.descorta }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+
+                </div>
+                <div class="col-sm-8">
+                
+                    <div class="row">
+                        <h4 class="p-l-15">Información básica <hr></h4>
+                        <div class="form-group col-sm-4 fg-float" ng-class="{ 'has-error': !oForm.codigo.$valid && oForm.codigo.$touched || oForm.$submitted && !oForm.codigo.$valid }">
+                            <div class="fg-line" ng-class="{
+                            'fg-toggled': item.codigo !== ''
+                        }">
+                                <input type="text" class="form-control input-sm" name="codigo" ng-model="item.codigo" ng-required="true" ng-trim="false" maxlength="10" >
+                            </div>
+                            <label class="fg-label">Código <span class="c-red">*</span></label>
+                            <span ng-show="oForm.$submitted || oForm.codigo.$touched">
+                                <small class="help-block error-span" ng-show="oForm.codigo.$error.required">El código es requerido.</small>   
+                            </span>
+                        </div>
+
+                        <div class="form-group col-sm-4 fg-float" ng-class="{ 'has-error': !oForm.descri.$valid && oForm.descri.$touched || oForm.$submitted && !oForm.descri.$valid }" >
+                            <div class="fg-line" ng-class="{
+                            'fg-toggled': item.descri !== ''
+                        }">
+                                <input type="text" class="form-control input-sm" name="descri" ng-model="item.descri" ng-required="true" ng-trim="false" maxlength="128" > 
+                            </div>
+                            <label class="fg-label">Descripción <span class="c-red">*</span></label>
+                            <span ng-show="oForm.$submitted || oForm.descri.$touched">
+                                <small class="help-block error-span" ng-show="oForm.descri.$error.required">La descripción es requerida.</small>   
+                            </span>
+                        </div>
+
+                        <div class="form-group col-sm-4 fg-float" ng-class="{ 'has-error': !oForm.descorta.$valid && oForm.descorta.$touched || oForm.$submitted && !oForm.descorta.$valid }">
+                            <div class="fg-line" ng-class="{
+                            'fg-toggled': item.descorta !== ''
+                        }">
+                                <input type="text" class="form-control input-sm" name="descorta" ng-model="item.descorta" ng-required="true" ng-trim="false" maxlength="64">
+                            </div>
+                            <label class="fg-label">Descripción corta <span class="c-red">*</span></label>
+                            <span ng-show="oForm.$submitted || oForm.descorta.$touched">
+                                <small class="help-block error-span" ng-show="oForm.descorta.$error.required">La descripción corta es requerida.</small>   
+                            </span>
+                        </div>
+
+
+                    </div>
+                    <div class="row p-r-15 p-l-15">
+                    <div class="col-sm-4" ng-class="{ 'has-error': !alumnosForm.idAlum.$valid && alumnosForm.idAlum.$touched || alumnosForm.$submitted && !alumnosForm.idAlum.$valid }">
+                        <label for="generoAlum" class="f-500 c-black m-b-15">Disponible </label>
+                        <div class="form-group">
+                            <div class="toggle-switch">
+                                <input id="ts1" type="checkbox" hidden="hidden">
+                                <label for="ts1" class="ts-helper"></label>
+                            </div>                        
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="row">
+                        <tabset>
+                            <tab ng-repeat="tab in tabs" justified="true" heading="{{tab.title}}" active="tab.active" disable="tab.disabled">
+                              <div ng-include="tab.content"></div>
+                            </tab>
+                        </tabset>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </form>
+</div>

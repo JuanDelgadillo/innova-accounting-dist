@@ -1,0 +1,218 @@
+<div class="card m-r-10 m-l-10 m-b-10">
+    <div class="card-header bgm-innova-toolbar">
+        <button class="btn">
+            <img src="assets/img/master-icons/boton_principal_importar.png" width="50" alt="">
+            <div class="caption">
+                Importar
+            </div>
+        </button>
+
+        <button class="btn">
+            <img src="assets/img/master-icons/boton_principal_cancelar.png" width="50" alt="">
+            <div class="caption">
+                Cancelar
+            </div>
+        </button>
+
+        <button class="btn">
+            <img src="assets/img/master-icons/boton_principal_borrar.png" width="50" alt="">
+            <div class="caption">
+                Eliminar
+            </div>
+        </button>
+
+        <button class="btn">
+            <img src="assets/img/master-icons/boton_principal_imprimir.png" width="50" alt="">
+            <div class="caption">
+                Imprimir
+            </div>
+        </button>
+
+        <button class="btn">
+            <img src="assets/img/master-icons/boton_principal_totalizar.png" width="50" alt="">
+            <div class="caption">
+                Totalizar
+            </div>
+        </button>
+
+        <button class="btn">
+            <img src="assets/img/master-icons/plan_cuenta.png" width="50" alt="">
+            <div class="caption">
+                P. Cuentas
+            </div>
+        </button>
+
+        <button class="btn">
+            <img src="assets/img/master-icons/centro_costo.png" width="50" alt="">
+            <div class="caption">
+                C. Costos
+            </div>
+        </button>
+
+        <button class="btn">
+            <img src="assets/img/master-icons/auxiliar.png" width="50" alt="">
+            <div class="caption">
+                Auxiliares
+            </div>
+        </button>
+        
+        
+        
+        <button class="btn">
+            <img src="assets/img/master-icons/boton_principal_salir.png" width="50" alt="">
+            <div class="caption">
+                Salir
+            </div>
+        </button>
+
+
+        <ul class="actions actions-alt m-t-25 title-modules">
+            <h2>Comprobantes</h2>
+        </ul>
+    </div>
+
+    <div class="card-body card-padding">
+    <div class="row row-md-flex">
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header bgm-gray">
+                    <h2 class="text-center">Información</h2>
+                </div>
+
+                <div class="card-body card-padding equalizer">
+                    <div class="row p-t-15">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <div class="fg-line">
+                                    <div class="select">
+                                        <select class="form-control" ng-model="alumno.genero" ng-required="true" name="generoAlum">
+                                            <option value="">- Tipo -</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group fg-line col-sm-8" data-ng-controller="datePickerController">
+                            <label for="fechaNacimientoAlum" class="f-500 c-black m-b-15">Fecha <span class="c-red">*</span></label>
+                            <div class="date-picker dp-blue" ng-class="{ 'is-opened': opened == true }">
+                                <div class="fg-line" ng-class="{ 'fg-toggled': opened == true }">
+                                    <input ng-click="open($event, 'opened')" type="text" class="form-control" datepicker-popup="{{format}}" show-weeks="false" ng-model="alumno.fecha_nacimiento" is-open="opened" min-date="minDate" datepicker-options="dateOptions" current-text="Hoy" ng-required="true" close-text="Cerrar" placeholder="Seleccionar fecha" name="fechaNacimientoAlum" readonly />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label for="generoAlum" class="f-500 c-black m-b-15">Efectivo </label>
+                            <div class="form-group">
+                                <div class="toggle-switch">
+                                    <input id="ts1" type="checkbox" hidden="hidden">
+                                    <label for="ts1" class="ts-helper"></label>
+                                </div>                        
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-sm-6 fg-float">
+                            <div class="fg-line">
+                                <input type="text" class="form-control input-sm" name="idAlum" ng-model="alumno.identificador" ng-required="true" ng-pattern="/^[0-9]+$/" ng-trim="false" maxlength="20">
+                            </div>
+                            <label class="fg-label">Número Doc</label>
+                        </div>
+
+                        <div class="form-group col-sm-6 fg-float">
+                            <div class="fg-line">
+                                <input type="text" class="form-control input-sm" name="idAlum" ng-model="alumno.identificador" ng-required="true" ng-pattern="/^[0-9]+$/" ng-trim="false" maxlength="20">
+                            </div>
+                            <label class="fg-label">Descripción</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header bgm-gray">
+                    <h2 class="text-center">Datos</h2>
+                </div>
+
+                <div class="card-body card-padding equalizer">
+                    <p class="p-t-30"><b>Código:</b> </p>
+                    <p class="p-t-30"><b>Comprobante:</b> </p>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header bgm-gray">
+                    <h2 class="text-center">Totales</h2>
+                </div>
+
+                <div class="card-body card-padding equalizer">
+                    <div class="row p-t-15">
+                        <div class="col-sm-8 text-right">
+                            <p><b>Movimientos</b></p>
+                        </div>
+                        <div class="col-sm-4 text-right">
+                            <p><b>Efectivo</b></p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <p><b>Total debe:</b></p>
+                        </div>
+                        <div class="col-sm-4 text-right">
+                            0.00
+                        </div>
+                        <div class="col-sm-4 text-right">
+                            0.00
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <p><b>Total haber:</b></p>
+                        </div>
+                        <div class="col-sm-4 text-right">
+                            0.00
+                        </div>
+                        <div class="col-sm-4 text-right">
+                            0.00
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <p><b>Total saldo:</b></p>
+                        </div>
+                        <div class="col-sm-4 text-right">
+                            0.00
+                        </div>
+                        <div class="col-sm-4 text-right">
+                            0.00
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row p-r-15 p-l-15 text-right">
+                    <h4 class="p-l-15">Comprobantes <hr></h4>
+                </div>
+
+                <div class="row p-10" >
+                    <tabset>
+                        <tab ng-repeat="tab in tabs" justified="true" heading="{{tab.title}}" active="tab.active" disable="tab.disabled">
+                          <div ng-include="tab.content"></div>
+                        </tab>
+                    </tabset>
+                </div>
+            </div> <!-- End del 2do col padre -->
+        </div>
+    </div>
+</div>

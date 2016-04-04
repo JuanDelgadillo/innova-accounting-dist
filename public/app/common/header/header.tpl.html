@@ -1,0 +1,212 @@
+
+<ul class="header-inner" >
+    <li id="menu-trigger" data-target="mainmenu" ng-click="edctrl.sidebarToggle.right=false; " data-toggle-sidebar data-model-left="edctrl.sidebarToggle.left" data-ng-class="{ 'open': edctrl.sidebarToggle.left === true }" popover-placement="bottom" popover-trigger="mouseenter" popover="Menu" >
+         
+         <div id="ico-menu" class="line-wrap animated" onmouseover="setAnimationRapido('zoomIn', 'ico-menu');" >
+            <div class="line top"></div>
+            <div class="line center"></div>
+            <div class="line bottom"></div>
+        </div>
+        <!--<div class="text-center m-t-0 p-t-0 c-blanco" ng-show="vista"> Menú </div>-->
+    </li>
+
+    <li class="logo hidden-xs" popover-placement="bottom" popover-trigger="mouseenter" popover="Inicio">
+        <a data-ui-sref="home" data-ng-click="edctrl.sidebarStat($event)"><!--Easy Dance--> <img src="assets/img/logo.png" class="img-opaco" width="110"></a>
+    </li>
+
+    <li class="pull-right"  >
+        <ul class="top-menu" >
+
+            <li id="toggle-width" popover-placement="bottom" popover-trigger="mouseenter" popover="Switch">
+                <div class="toggle-switch">
+                    <span class="p-r-10 f-700 c-blanco">Off</span><input id="tw-switch" type="checkbox" ng-click="edctrl.sidebarToggle.left = false;edctrl.sidebarToggle.right = false" hidden="hidden" data-change-layout="edctrl.layoutType">
+                    <label for="tw-switch" class="ts-helper"></label><span class="m-t-0 p-t-0 p-l-10 f-700 c-blanco">On</span>
+                </div>
+            </li>
+
+            <!--<li id="top-search">
+                <a class="tm-search" ng-click="edctrl.sidebarToggle.left = false;edctrl.sidebarToggle.right = false" href="" data-ng-click="hctrl.openSearch()"></a>
+            </li>-->
+			
+            <!--<li class="dropdown" dropdown>
+                <a dropdown-toggle class="tm-message" ng-click="edctrl.sidebarToggle.left = false;edctrl.sidebarToggle.right = false" href=""><i class="tmn-counts">1</i></a>
+                <div class="dropdown-menu dropdown-menu-lg stop-propagate pull-right">
+                    <div class="listview">
+                        <div class="lv-header">
+                           Próximamente Mensajes
+                        </div>
+                        <div class="lv-body">
+                            <a class="lv-item" ng-href="" ng-repeat="w in hctrl.messageResult.list">
+                                <div class="media">
+                                    <div class="pull-left">
+                                        <img class="lv-img-sm" ng-src="assets/img/profile-pics/{{ w.img }}" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lv-title">{{ w.user }}</div>
+                                        <small class="lv-small">{{ w.text }}</small>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="clearfix"></div>
+                        
+                        <a class="lv-footer" href="">Ver todos</a>
+                    </div>
+                </div>
+            </li>-->
+            <!--<li class="dropdown" dropdown>
+                <a dropdown-toggle class="tm-notification" ng-click="edctrl.sidebarToggle.left = false;edctrl.sidebarToggle.right = false" href=""><i class="tmn-counts">1</i></a>
+                <div class="dropdown-menu dropdown-menu-lg stop-propagate pull-right">
+                    <div class="listview" id="notifications">
+                        <div class="lv-header">
+                           Próximamente Notificaciones
+
+                            <ul class="actions">
+                                <li>
+                                    <a href="" data-ng-click="hctrl.clearNotification($event)">
+                                        <i class="zmdi zmdi-check-all"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="lv-body">
+                            <a class="lv-item" ng-href="" ng-repeat="w in hctrl.messageResult.list">
+                                <div class="media">
+                                    <div class="pull-left">
+                                        <img class="lv-img-sm" ng-src="assets/img/profile-pics/{{ w.img }}" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lv-title">{{ w.user }}</div>
+                                        <small class="lv-small">{{ w.text }}</small>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="clearfix"></div>
+
+                        <a class="lv-footer" href="">Ver anteriores</a>
+                    </div>
+
+                </div>
+            </li>-->
+            <!--<li class="dropdown hidden-xs" dropdown>
+                <a dropdown-toggle class="tm-task" ng-click="edctrl.sidebarToggle.left = false;edctrl.sidebarToggle.right = false" href=""><i class="tmn-counts">1</i></a>
+                <div class="dropdown-menu pull-right dropdown-menu-lg">
+                    <div class="listview">
+                        <div class="lv-header">
+                           Próximamente Tareas
+                        </div>
+                        <div class="lv-body">
+                            <div class="lv-item">
+                                <div class="lv-title m-b-5">Revisar las coreografías de los nuevos grupos participantes</div>
+
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+                                        <span class="sr-only">95% Complete (success)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lv-item">
+                                <div class="lv-title m-b-5">Atender a la señora interesada en los 15 años</div>
+
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                        <span class="sr-only">80% Complete (success)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lv-item">
+                                <div class="lv-title m-b-5">Entregar las entradas del evento</div>
+
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                        <span class="sr-only">20% Complete</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lv-item">
+                                <div class="lv-title m-b-5">Desarrollar las tareas del Marketing digital</div>
+
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                        <span class="sr-only">60% Complete (warning)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lv-item">
+                                <div class="lv-title m-b-5">Llamar al equipo de mantenimiento para el lavado de los aires acondicionados</div>
+
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                        <span class="sr-only">80% Complete (danger)</span>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                        
+                        <div class="clearfix"></div>
+
+                        <a class="lv-footer" href="">Ver todas</a>
+                    </div>
+                </div>
+            </li>-->
+            <!--<li class="dropdown" dropdown>
+                <a dropdown-toggle class="tm-settings" ng-click="edctrl.sidebarToggle.left = false;edctrl.sidebarToggle.right = false" href=""></a>
+                <ul class="dropdown-menu dm-icon pull-right">
+                    <li class="hidden-xs">
+                        <a data-ng-click="hctrl.fullScreen()" href=""><i class="zmdi zmdi-fullscreen"></i> Pantalla completa</a>
+                    </li>--><!-- 
+                    <li>
+                        <a data-ng-click="hctrl.clearLocalStorage()" href=""><i class="zmdi zmdi-delete"></i> Limpiar almacenamiento local</a>
+                    </li> -->
+                    <!--<li ng-if="user.privilege === 2 || user.privilege === 1">
+                        <a data-ui-sref="configuracionSistema.ayuda-configuracion" ng-click="edctrl.viewConfig = true"><i class="zmdi zmdi-settings"></i> Configuración general</a>
+                    </li>                
+                    <li ng-if="user.privilege === 2 || user.privilege === 1">
+                        <a data-ui-sref="info.ayuda" ><i class="zmdi zmdi-help-outline"></i> Ayuda</a>
+                    </li>                    
+                </ul>
+            </li>
+            <li ng-if="user.privilege === 2 || user.privilege === 1" class="hidden-xs" data-target="chat" ng-click="edctrl.sidebarToggle.left = false" data-toggle-sidebar data-model-right="edctrl.sidebarToggle.right" data-ng-class="{ 'open': edctrl.sidebarToggle.right === true }">
+            </li>-->
+			<!-- <li ng-if="user.privilege === 2 || user.privilege === 1" popover-placement="bottom" popover-trigger="mouseenter" popover="Configuración">
+                <a data-ui-sref="configuracionSistema.ayuda-configuracion" ng-click="edctrl.viewConfig = true; edctrl.sidebarToggle.right = false; edctrl.sidebarToggle.left = false;" class="tm-config"  ></a>
+            </li> 
+			<li ng-if="user.privilege === 2 || user.privilege === 1" popover-placement="bottom" popover-trigger="mouseenter" popover="Ayuda">
+                <a data-ui-sref="info.ayuda" class="tm-ayuda" ng-click="edctrl.sidebarToggle.left = false;edctrl.sidebarToggle.right = false;" ></a>
+            </li>   -->
+			<li >
+                <a dropdown-toggle ng-click="edctrl.sidebarToggle.left = false;edctrl.sidebarToggle.right = false" href="">
+                    <div class="media">
+                        <div class="pull-left p-relative">
+                            <img class="lv-img-sm" src="assets/img/profile-pics/2.jpg" alt="">
+                            <i class="chat-status-busy"></i>
+                        </div>
+                        <div class="media-body">
+                            <div class="lv-title" style="color: white">Eli Hernandez</div>
+                            <small class="lv-small" style="color: white">05/04/2017</small>
+                        </div>
+                    </div>
+                </a>                
+            </li>
+           
+            <!-- 
+            chat   
+            <li ng-show="true" class="hidden-xs" data-target="chat" ng-click="edctrl.sidebarToggle.left = false" data-toggle-sidebar data-model-right="edctrl.sidebarToggle.right" data-ng-class="{ 'open': edctrl.sidebarToggle.right === true }" popover-placement="bottom" popover-trigger="mouseenter" popover="Asistencia">              
+                <!--<a><i class="ico-25 p-t-0 c-blanco zmdi zmdi-shield-check"></i></a>-->
+                <a class="tm-chat" href=""></a>
+            </li> -->
+            
+
+
+        </ul>
+    </li>
+</ul>
+
+<!-- Top Search Content -->
+<div id="top-search-wrap">
+    <input type="text">
+    <i id="top-search-close" data-ng-click="hctrl.closeSearch()">&times;</i>
+</div>

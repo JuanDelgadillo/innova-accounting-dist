@@ -1,0 +1,28 @@
+<form name="nivelbaileForm" ng-submit="save()" role="form" novalidate>
+  <div class="modal-header bgm-morado-popup">
+    <h4 class="modal-title">
+      <i class="flaticon-nivelbaile ico-25 p-r-5"></i> Categorías
+      <i class="zmdi zmdi-caret-right"></i> Nivel de Baile
+      <span class="pull-right modalClose" ng-click="$dismiss('cancel')" ><i class="zmdi zmdi-close"></i></span>
+    </h4>
+  </div>
+  <div class="modal-body">
+    <div class="card-body">
+      <div class="row p-r-15 p-l-15 p-b-10 p-t-30">
+        <div class="form-group col-sm-5" ng-class="{ 'has-error': !nivelbaileForm.nombreEsp.$valid && nivelbaileForm.nombreEsp.$touched || nivelbaileForm.$submitted && !nivelbaileForm.nombreEsp.$valid }">
+          <div class="fg-line">
+            <label for="nombrenivelbaile" class="f-500 c-black m-b-15 ">Nombre <span class="c-red">*</span></label>
+            <input type="text" class="form-control input-sm" name="nombreNiv" ng-required="true" ng-model="nivelbaile.nombre" placeholder="Nombre" ng-trim="false" maxlength="30" >
+          </div>
+          <span ng-show="nivelbaileForm.$submitted || nivelbaileForm.nombreEsp.$touched">
+            <small class="help-block error-span" ng-show="nivelbaileForm.nombreEsp.$error.required">El nombre es requerido.</small>    
+          </span>
+        </div>    
+      </div>
+    </div>                  
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-primary waves-effect">Guardar</button>
+    <button type="button"  ng-click="$dismiss('cancel')" class="btn btn-default waves-effect">Cancelar</button> 
+  </div>
+</form>

@@ -1,0 +1,87 @@
+<a ng-click="modal(false)"  class="btn btn-float btn-success m-btn"><i class="zmdi zmdi-plus"></i></a>           
+
+<div class="container">
+    <div class="block-header">
+        <h4><i class="flaticon-talleres"></i> Precios y servicios <i class="zmdi zmdi-caret-right"></i> Programa de Baile </h4>
+    </div>        
+<div class="card">
+        <div class="listview lv-bordered lv-lg">
+          <div class="lv-header-alt p-b-0 clearfix">            
+            <div class="col-xs-4 col-sm-2">
+            <!--<div class="form-group m-b-10">
+                <div class="fg-line">
+                    <div class="select">
+                        <select class="form-control" name="cantidadRegistro">
+                            <optgroup label="Registros por página">
+                                <option value="10">10</option>
+                                <option value="25" >25 </option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>                                
+                            </optgroup> 
+                        </select>
+                    </div>
+                </div>
+            </div>-->
+            
+        </div>
+
+
+                <div class="lvh-search" data-ng-show="edctrl.listviewSearchStat" data-ng-click="edctrl.listviewSearchStat">
+                    <input type="text" placeholder="Buscar" name="buscar" ng-model="buscar.$" class="lvhs-input">
+
+                    <i class="lvh-search-close" data-ng-click="edctrl.listviewSearchStat = false">&times;</i>
+                </div>
+
+                <ul class="lv-actions actions">
+                    <li>
+                        <a href="" title="Buscar" data-ng-click="edctrl.listviewSearchStat = true">
+                            <i class="zmdi zmdi-search"></i>
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a href="" title="Editar información" ng-click="modal()">
+                            <i class="zmdi zmdi-edit"></i>
+                        </a>
+                    </li>                   
+                    <li>
+                        <a href="" title="Eliminar"  >
+                            <i class="zmdi zmdi-delete"></i>
+                        </a>
+                    </li>  -->        
+                    
+                </ul>
+          </div>
+
+          <div class="lv-body p-t-10">
+            <div class="table-responsive">
+                <table ng-table="tableSorting" class="table table-striped table-vmiddle">
+                <tbody>                                                                               
+                    <tr ng-repeat="programabaile in $data |filter:buscar">             
+                        <td data-title="'Nombre'" sortable="'nombre'" >
+                            {{ programabaile.nombre }}
+                        </td>
+                        <td data-title="'Costo'" sortable="'Costo'" >
+                            {{ programabaile.costo }}
+                        </td>
+                        <td width="5%" class="operations" align="center" data-title="'Operaciones'" >
+                        <a ng-click="update(programabaile)" class="update-row" title='Actualizar el programa baile "{{programabaile.nombre}}"'>
+                            <i class="zmdi zmdi-edit"></i>
+                        </a>       
+                        <a ng-click="remove(programabaile)" class="delete-row" title='Eliminar el programa baile "{{programabaile.nombre}}"'  >
+                            <i class="zmdi zmdi-delete"></i>
+                        </a>
+                        </td>
+                    </tr>
+                    <tr ng-show="results">
+                        <td class="bg-gris" colspan="3">
+                            <h4 class="text-center">No se encontraron resultados</h4>
+                        <td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+          </div>
+
+        </div>
+</div>
+</div>

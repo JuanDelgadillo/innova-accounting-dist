@@ -1,0 +1,95 @@
+<section class="login-content">
+    
+<div class="login_box">
+    <div>
+       <img src="assets/img/logo_innova.png" width="150" style="z-index:1000;">
+    </div>
+
+    <div class="lc-block toggled animated " id="l-login" ng-class="usuarioController.ca" >
+        <form name="loginForm" ng-submit="login()" method="post">
+            <div class="input-group m-b-30 fg-float" >
+                <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+                <div class="fg-line" ng-class="{ 'fg-toggledp': user.email !== '' && user.email !== undefined}">
+                    <input type="text" name="emailED" ng-model="user.email" class="form-control fg-input" ng-focus="focuse=true" ng-blur="focuse=false" ng-required="true" />
+                </div>
+                <label class="fg-label" style="left:35px;">Correo electrónico</label>
+                <!-- <span ng-show="loginForm.$submitted || loginForm.emailED.$touched">
+                        <small style="color:#f44336;" class="help-block error-span" ng-show="loginForm.emailED.$error.required">El correo es requerido.</small>   
+                    </span> -->
+            </div> 
+
+            <div class="input-group m-b-20 fg-float" >
+                <span class="input-group-addon"><i class="zmdi zmdi-lock"></i></span>
+                <div class="fg-line" ng-class="{ 'fg-toggledp': user.password !== '' && user.password !== undefined}">
+                    <input type="password" name="passwordED" ng-model="user.password" class="form-control fg-input" ng-focus="focus=true" ng-blur="focus=false" ng-required="true" />
+                </div>                
+                <label class="fg-label" style="left:35px;">Contraseña</label>
+               <!--  <span ng-show="loginForm.$submitted || loginForm.passwordED.$touched">
+                        <small style="color:#f44336;" class="help-block error-span" ng-show="loginForm.passwordED.$error.required">La contraseña es requerida.</small>   
+                    </span> -->
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="col-sm-6">
+                <div class="checkbox m-l-0 m-b-25">
+                    <label>
+                        <input type="checkbox" ng-model="reccuerdame" value="recuerdame=true">
+                        <i class="input-helper"></i>
+                        Recuérdame
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <label class="m-b-25 p-t-5">
+                     <a href="">Olvidaste tu contraseña?</a>   
+                </label>                
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div ng-show="isValid" class="alert alert-danger alert-dismissible text-left" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="isValid=0"><span aria-hidden="true">&times;</span></button>
+                Usuario y/o contraseña invalida.
+            </div>
+
+            <button class="btn btn-login btn-info btn-float" ng-click="usuarioController.setAnimation('shake', 'l-login')" ><i class="zmdi zmdi-arrow-forward"></i></button>
+        </form>
+    </div>
+
+
+    <footer id="footer-login" >
+    <div class="p-10 footer-text p-t-30">
+            <p> www.innovaprosystem.com </p> 
+
+
+            <p class="f-35">
+                <a href="https://www.facebook.com/innovaprosystem/" target="_blank" title="Facebook">
+                    <i class="flaticon-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/innovaprosystem/" target="_blank" title="Instagram">
+                    <i class="flaticon-instagram"></i>
+                </a>
+                <a href="https://twitter.com/innovaprosystem" target="_blank" title="Twitter" >
+                    <i class="flaticon-twitter"></i>
+                </a> 
+                <a href="https://plus.google.com/u/0/104687135628887176910" target="_blank" title="Google+" >
+                    <i class="flaticon-google-plus"></i>
+                </a>
+            </p>
+
+            <ul class="f-menu">
+                <li><a href="">Empresas afiliadas</a></li>
+                <li><a href="">Soporte</a></li>
+                <li><a href="">Contacto</a></li>
+            </ul>
+
+            <p class="c-negro">Copyright &copy; 2016 Innova Prosystem </p>
+
+        </div>
+    </footer>
+</div>
+
+
+</section>
+
+

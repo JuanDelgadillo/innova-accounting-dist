@@ -1,0 +1,48 @@
+<div class="card-body">
+
+    <div class="row p-r-15 p-l-15 p-b-10">
+        <div class="form-group col-sm-4 fg-float" ng-class="{ 'has-error': !oForm.tipo_cambio.$valid && oForm.tipo_cambio.$touched || oForm.$submitted && !oForm.tipo_cambio.$valid }">
+            <label for="generoAlum" class="f-500 c-black m-b-15">Tipo de cambio <span class="c-red">*</span></label>
+            <div class="fg-line">
+                <input type="text" class="form-control input-sm" name="tipo_cambio" ng-model="item.tipo_cambio" ng-required="true" ng-trim="false" maxlength="64" ng-pattern="/^[0-9]+$/">
+            </div>
+            <span ng-show="oForm.$submitted || oForm.tipo_cambio.$touched">
+                <small class="help-block error-span" ng-show="oForm.tipo_cambio.$error.required">El tipo de cambio es requerido.</small>
+                <small class="help-block error-span" ng-show="oForm.tipo_cambio.$error.pattern">El tipo de cambio debe contener solo números.</small>     
+            </span>
+        </div>
+         <div class="col-sm-4" ng-class="{ 'has-error': !oForm.simbolo.$valid && oForm.simbolo.$touched || oForm.$submitted && !oForm.simbolo.$valid }">
+            <label for="generoAlum" class="f-500 c-black m-b-15">Simbolo <span class="c-red">*</span></label>
+            <div class="form-group">
+                <div class="fg-line">
+                    <div class="select">
+                        <select class="form-control" ng-model="item.simbolo" ng-required="true" name="simbolo">
+                            <option value="">- Seleccione -</option>
+                            <option value="Dolar">Dolar</option>
+                            <option value="Peso">Peso</option>
+                            <option value="">Cargar todos los simbolos de monedas...</option>
+                        </select>
+                    </div>
+                </div>
+                <span ng-show="oForm.$submitted || oForm.simbolo.$touched">
+                    <small class="help-block error-span" ng-show="oForm.simbolo.$error.required">El simbolo es requerido.</small>    
+                </span>
+            </div>
+        </div>
+
+        <div class="col-sm-4" ng-class="{ 'has-error': !oForm.disponible.$valid && oForm.disponible.$touched || oForm.$submitted && !oForm.disponible.$valid }">
+            <label for="disponible" class="f-500 c-black m-b-15">Disponible </label>
+            <div class="form-group">
+                <div class="toggle-switch" data-ts-color="green">
+                    <input id="disponible" name="disponible" ng-model="item.disponible" type="checkbox">
+                    <label for="disponible" class="ts-helper"></label>
+                </div>                        
+            </div>
+        </div>
+        
+
+    </div>
+
+</div>
+
+

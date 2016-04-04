@@ -1,0 +1,37 @@
+
+<header id="header" data-ng-include src="'app/common/header/header.tpl.html'" data-ng-controller="headerCtrl as hctrl"></header>
+
+<section id="main"  >
+    <aside id="sidebar" data-ng-include src="'app/common/sidebar-left/sidebar-left.tpl.html'" data-ng-controller="easyDanceCtrl" data-ng-class="{ 'toggled': edctrl.sidebarToggle.left === true }"></aside>
+
+   <aside id="chat" data-ng-include src="'app/common/chat/chat.tpl.html'" data-ng-controller="headerCtrl as hctrl" data-ng-class="{ 'toggled': edctrl.sidebarToggle.right === true }"></aside>
+	
+	<div ng-click="edctrl.sidebarToggle.left = false;edctrl.sidebarToggle.right = false" >
+    <section id="content" class="page-view animated" data-ng-class="{ 'opaco': edctrl.sidebarToggle.left === true || edctrl.sidebarToggle.right === true }" data-ui-view></section>
+    </div>
+</section>
+<div ng-click="edctrl.sidebarToggle.left = false;edctrl.sidebarToggle.right = false" >
+<footer id="footer" ng-init="zona=true;" data-ng-include src="'app/common/footer/footer.tpl.html'"></footer>
+</div>
+<script type="text/javascript">
+  // function setAnimation(animation, target) {
+  //            $('#'+target).addClass(animation);
+
+  //           setTimeout(function(){
+  //             $('#'+target).removeClass(animation);
+  //           }, 1500); 
+  // }
+
+  // function setAnimationRapido(animation, target) {
+  //            $('#'+target).addClass(animation);
+
+  //           setTimeout(function(){
+  //             $('#'+target).removeClass(animation);
+  //           }, 500); 
+  // }
+  
+  // setAnimation('fadeInUp', 'content');
+
+  
+</script>
+

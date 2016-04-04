@@ -1,0 +1,41 @@
+<form name="salonForm" ng-submit="save()" role="form" novalidate>
+  <div class="modal-header bgm-morado-popup">
+    <h4 class="modal-title">
+      <i class="flaticon-estudio-sala ico-25 p-r-5"></i>Categorías
+      <i class="zmdi zmdi-caret-right"></i> Estudio
+      <span class="pull-right modalClose" ng-click="$dismiss('cancel')" ><i class="zmdi zmdi-close"></i></span>
+    </h4>
+  </div>
+  <div class="modal-body">
+    <div class="card-body">
+        <div class="row p-r-15 p-l-15 p-b-10 p-t-30">
+           <div class="col-sm-6">
+              <label for="cantidad" class="f-500 c-black m-b-15">Nombre <span class="c-red">*</span></label>  
+              <div class="form-group" ng-class="{ 'has-error': !salonForm.nombreSalon.$valid && salonForm.nombreSalon.$touched || salonForm.$submitted && !salonForm.nombreSalon.$valid }">
+                  <div class="fg-line">
+                      <input type="text" class="form-control" name="nombreSalon" ng-model="salon.nombre" ng-required="true" placeholder="Ej: Sala Grande" ng-trim="false" maxlength="40" >
+                  </div>
+                  <span ng-show="salonForm.$submitted || salonForm.nombreSalon.$touched">
+                    <small class="help-block error-span" ng-show="salonForm.nombreSalon.$error.required">El nombre es requerido.</small>    
+                  </span>
+              </div>
+          </div>
+        <div class="col-sm-6">
+            <label for="cantidad" class="f-500 c-black m-b-15">Capacidad máxima</label>  
+            <div class="form-group" ng-class="{ 'has-error': !salonForm.capacidadSalon.$valid && salonForm.capacidadSalon.$touched || salonForm.$submitted && !salonForm.capacidadSalon.$valid }">
+                <div class="fg-line">
+                    <input type="text" name="capacidadSalon" ng-model="salon.capacidad" class="form-control" ng-pattern="/^[0-9]{1,4}?$/" placeholder="Ej: 400" ng-trim="false" maxlength="4" >
+                </div>
+                <span ng-show="salonForm.$submitted || salonForm.capacidadSalon.$touched">
+                    <small class="help-block error-span" ng-show="salonForm.capacidadSalon.$error.pattern">La capacidad del salón debe ser valida.</small>    
+                  </span>
+            </div>
+        </div>       
+        </div>
+    </div>                  
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-primary waves-effect">Guardar</button>
+    <button type="button"  ng-click="$dismiss('cancel')" class="btn btn-default waves-effect">Cancelar</button> 
+  </div>
+</form>

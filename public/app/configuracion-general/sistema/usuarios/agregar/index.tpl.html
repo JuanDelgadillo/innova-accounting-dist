@@ -1,0 +1,57 @@
+<form name="usuarioForm" ng-submit="save()" role="form" novalidate>
+  <div class="modal-header bgm-morado-popup">
+    <h4 class="modal-title">
+      <i class="flaticon-especialidad ico-25 p-r-5"></i> Categorías
+      <i class="zmdi zmdi-caret-right"></i> usuario 
+      <span class="pull-right modalClose" ng-click="$dismiss('cancel')" ><i class="zmdi zmdi-close"></i></span>
+    </h4>
+  </div>
+  <div class="modal-body">
+    <div class="card-body">
+      <div class="row p-r-15 p-l-15 p-b-10 p-t-30">
+        <div class="form-group col-sm-4" ng-class="{ 'has-error': !usuarioForm.nombreUsu.$valid && usuarioForm.nombreUsu.$touched || usuarioForm.$submitted && !usuarioForm.nombreUsu.$valid }">
+          <div class="fg-line">
+            <label for="nombreusuario" class="f-500 c-black m-b-15 ">Nombre <span class="c-red">*</span></label>
+            <input type="text" class="form-control input-sm" name="nombreUsu" ng-required="true" ng-model="usuario.nombre" placeholder="Nombre" ng-trim="false" maxlength="15">
+          </div>
+          <span ng-show="usuarioForm.$submitted || usuarioForm.nombreUsu.$touched">
+            <small class="help-block error-span" ng-show="usuarioForm.nombreUsu.$error.required">El nombre es requerido.</small>    
+          </span>
+        </div>
+        
+        <div class="form-group col-sm-4" ng-class="{ 'has-error': !usuarioForm.correoUsu.$valid && usuarioForm.correoUsu.$touched || usuarioForm.$submitted && !usuarioForm.correoUsu.$valid }">
+            <div class="fg-line">
+                <label for="correoUsu" class="f-500 c-black m-b-15">Correo electrónico <span class="c-red">*</span></label>
+                <input type="email" class="form-control input-sm" name="correoUsu" ng-model="usuario.correo" ng-required="true" placeholder="Ej: easydancelatino@gmail.com"
+                ng-pattern='/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/' maxlength="30" >
+            </div>
+            <span ng-show="usuarioForm.$submitted || usuarioForm.correoUsu.$touched">
+                <small class="help-block error-span" ng-show="usuarioForm.correoUsu.$error.required">El correo es requerido.</small>
+                <small class="help-block error-span" ng-show="usuarioForm.correoUsu.$error.pattern">El correo es invalido.</small>                
+            </span>
+        </div>
+
+        <div class="form-group col-sm-4" ng-class="{ 'has-error': !usuarioForm.nivelUsu.$valid && usuarioForm.nivelUsu.$touched || usuarioForm.$submitted && !usuarioForm.nivelUsu.$valid }">
+        <div class="fg-line">
+           <label for="nivelUsuario" class="f-500 c-black m-b-15">Nivel de acceso</label>
+                <div class="select">
+                    <select class="form-control" name="nivelUsu" ng-model="usuario.nivel_acceso" >
+                    <option value="">- Seleccione -</option>
+                    <option value="admin">- Administrador -</option>
+                    <option value="usuario">- Usuario General -</option>                    
+                </select>
+            </div>
+          </div>
+          <span ng-show="usuarioForm.$submitted || usuarioForm.nivelUsu.$touched">
+            <small class="help-block error-span" ng-show="usuarioForm.nivelUsu.$error.required">El nivel usuario es requerido.</small>    
+          </span>
+        </div> 
+        </div>
+      </div>
+    </div>                  
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-primary waves-effect">Guardar</button>
+    <button type="button"  ng-click="$dismiss('cancel')" class="btn btn-default waves-effect">Cancelar</button> 
+  </div>
+</form>

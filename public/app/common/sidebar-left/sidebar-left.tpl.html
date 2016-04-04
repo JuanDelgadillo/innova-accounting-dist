@@ -1,0 +1,207 @@
+
+<div class="sidebar-inner c-overflow">    
+    <ul id="menu-general" class="main-menu" ng-if="!edctrl.$state.includes('configuracionSistema') && (user.privilege === 2 || user.privilege === 1)">
+
+
+         <li class="sub-menu" data-ng-class="{ 'active toggled': edctrl.$state.includes('organizacion') }">
+            <a data-ui-sref="organizacion.menu" toggle-submenu><i class="zmdi zmdi-caret-right"></i> Organizacion</a>
+
+             <ul>
+                <li>
+                    <a data-ui-sref="organizacion.organizacion" data-ui-sref-active="active" data-ng-click="edctrl.sidebarStat($event)">
+                    <img src="assets/img/innova-icons/comprobante/comprobanteN.png" width="30" alt="">
+                    Organizacion
+                    <i class="zmdi zmdi-caret-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+
+        <!-- ngclick agregado al elemento para la opcion dinamica de cierre cuando se abre una nueva -->
+        <li class="sub-menu" ng-click="edctrl.algo($event)" data-ng-class="{ 'active toggled': edctrl.$state.includes('generales') }">
+            <a data-ui-sref="generales.menu" toggle-submenu><i class="zmdi zmdi-caret-right"></i> Generales</a>
+
+            <ul>
+                <li>
+                    <a data-ui-sref="generales.cuenta-contable" data-ui-sref-active="active" data-ng-click="edctrl.sidebarStat($event)">
+                    <img src="assets/img/innova-icons/generales/cuentas_contableN.png" width="30" alt="">
+                    Cuentas Contables
+                    <i class="zmdi zmdi-caret-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a data-ui-sref="generales.centro-de-costo" data-ui-sref-active="active" data-ng-click="edctrl.sidebarStat($event)">
+                    <img src="assets/img/innova-icons/generales/centro_costosN.png" width="30" alt="">
+                    Centros de Costos
+                    <i class="zmdi zmdi-caret-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a data-ui-sref="generales.tipos" data-ui-sref-active="active" data-ng-click="edctrl.sidebarStat($event)">
+                    <img src="assets/img/innova-icons/generales/tipoN.png" width="30" alt="">
+                    Tipos 
+                    <i class="zmdi zmdi-caret-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a data-ui-sref="generales.monedas" data-ui-sref-active="active" data-ng-click="edctrl.sidebarStat($event)">
+                    <img src="assets/img/innova-icons/generales/monedasN.png" width="30" alt="">
+                    Monedas 
+                    <i class="zmdi zmdi-caret-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a data-ui-sref="generales.zonas" data-ui-sref-active="active" data-ng-click="edctrl.sidebarStat($event)">
+                    <img src="assets/img/innova-icons/generales/zonasN.png" width="30" alt="">
+                    Zonas 
+                    <i class="zmdi zmdi-caret-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a data-ui-sref="generales.retenciones" data-ui-sref-active="active" data-ng-click="edctrl.sidebarStat($event)">
+                    <img src="assets/img/innova-icons/generales/retencionesN.png" width="30" alt="">
+                    Retenciones - No 
+                    <i class="zmdi zmdi-caret-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="sub-menu" data-ng-class="{ 'active toggled': edctrl.$state.includes('auxiliar') }">
+            <a data-ui-sref="auxiliar.menu" toggle-submenu><i class="zmdi zmdi-caret-right"></i> Auxiliares</a>
+
+            <ul>
+                <li>
+                    <a data-ui-sref="auxiliar.proveedores" data-ui-sref-active="active" data-ng-click="edctrl.sidebarStat($event)">
+                    <img src="assets/img/innova-icons/auxiliares/proveedoresN.png" width="30" alt="">
+                    Proveedores
+                    <i class="zmdi zmdi-caret-right"></i>
+                    </a>
+                </li>
+                 <li>
+                    <a data-ui-sref="auxiliar.clientes" data-ui-sref-active="active" data-ng-click="edctrl.sidebarStat($event)">
+                    <img src="assets/img/innova-icons/auxiliares/clientesN.png" width="30" alt="">
+                    Clientes
+                    <i class="zmdi zmdi-caret-right"></i>
+                    </a>
+                </li>
+                 <li>
+                    <a data-ui-sref="auxiliar.talento-humano" data-ui-sref-active="active" data-ng-click="edctrl.sidebarStat($event)">
+                    <img src="assets/img/innova-icons/auxiliares/talentoN.png" width="30" alt="">
+                    Talento Humano
+                    <i class="zmdi zmdi-caret-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="sub-menu" data-ng-class="{ 'active toggled': edctrl.$state.includes('comprobantes') }">
+            <a data-ui-sref="comprobantes.menu" toggle-submenu><i class="zmdi zmdi-caret-right"></i> Comprobante</a>
+
+             <ul>
+                <li>
+                    <a data-ui-sref="comprobantes.comprobante" data-ui-sref-active="active" data-ng-click="edctrl.sidebarStat($event)">
+                    <img src="assets/img/innova-icons/comprobante/comprobanteN.png" width="30" alt="">
+                    Comprobante
+                    <i class="zmdi zmdi-caret-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="sub-menu" data-ng-class="{ 'active toggled': edctrl.$state.includes('finanzas') && !edctrl.$state.includes('agendar.agregar') }">
+            <a data-ui-sref="finanzas.menu" toggle-submenu><i class="zmdi zmdi-caret-right"></i> Finanzas</a>
+
+            <ul>
+                <li>
+                    <a data-ui-sref="finanzas.retenciones-cxc" data-ui-sref-active="active" data-ng-click="edctrl.sidebarStat($event)">
+                    <img src="assets/img/innova-icons/finanzas/retenciones_cxcN.png" width="30" alt="">
+                    Reteneciones de CxC
+                    <i class="zmdi zmdi-caret-right"></i>
+                    </a>
+                </li>
+                 <li>
+                    <a data-ui-sref="finanzas.retenciones-cxp" data-ui-sref-active="active" data-ng-click="edctrl.sidebarStat($event)">
+                    <img src="assets/img/innova-icons/finanzas/retenciones_cxpN.png" width="30" alt="">
+                    Retenciones CxP
+                    <i class="zmdi zmdi-caret-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="sub-menu" data-ng-class="{ 'active toggled': edctrl.$state.includes('documentos') && !edctrl.$state.includes('agendar.agregar') }">
+            <a data-ui-sref="documentos.menu" toggle-submenu><i class="zmdi zmdi-caret-right"></i> 
+       
+            Documentos</a>
+
+            <ul>
+                <li>
+                    <a data-ui-sref="documentos.centro-de-impresion" data-ui-sref-active="active" data-ng-click="edctrl.sidebarStat($event)">
+                    <img src="assets/img/innova-icons/documentos/centro_impresionN.png" width="30" alt="">
+                    Centro de impresiones
+                    <i class="zmdi zmdi-caret-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="sub-menu" data-ng-class="{ 'active toggled': edctrl.$state.includes('seguridad-control') && !edctrl.$state.includes('agendar.agregar') }">
+            <a data-ui-sref="seguridad-control.menu" toggle-submenu><i class="zmdi zmdi-caret-right"></i> Seguridad y Control</a>
+
+            <ul>
+                <li>
+                    <a data-ui-sref="seguridad-control.usuarios" data-ui-sref-active="active" data-ng-click="edctrl.sidebarStat($event)">
+                    <img src="assets/img/innova-icons/seguridad_control/usuarioN.png" width="30" alt="">
+                    Usuarios
+                    <i class="zmdi zmdi-caret-right"></i>
+                    </a>
+                </li>
+                 <li>
+                    <a data-ui-sref="seguridad-control.configuracion" data-ui-sref-active="active" data-ng-click="edctrl.sidebarStat($event)">
+                    <img src="assets/img/innova-icons/seguridad_control/preferenciasN.png" width="30" alt="">
+                    Configuración
+                    <i class="zmdi zmdi-caret-right"></i>
+                    </a>
+                </li>
+                 <li>
+                    <a data-ui-sref="seguridad-control.licencia" data-ui-sref-active="active" data-ng-click="edctrl.sidebarStat($event)">
+                    <img src="assets/img/innova-icons/seguridad_control/licenciaN.png" width="30" alt="">
+                    Mi licencia
+                    <i class="zmdi zmdi-caret-right"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a data-ui-sref="seguridad-control.bloqueo-de-periodos" data-ui-sref-active="active" data-ng-click="edctrl.sidebarStat($event)">
+                    <img src="assets/img/innova-icons/seguridad_control/bloqueo_periodoN.png" width="30" alt="">
+                    Bloqueo de Períodos
+                    <i class="zmdi zmdi-caret-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="sub-menu" data-ng-class="{ 'active toggled': edctrl.$state.includes('salir') && !edctrl.$state.includes('agendar.agregar') }">
+            <a data-ui-sref="salir.menu" toggle-submenu><i class="zmdi zmdi-caret-right"></i>Salir</a>
+
+            <ul>
+                <li>
+                    <a data-ui-sref="salir.cerrar-sesion" data-ui-sref-active="active" data-ng-click="edctrl.sidebarStat($event)">
+                    <img src="assets/img/innova-icons/salir/cerrar_sesionN.png" width="30" alt="">
+                    Cerrar Sesion
+                    <i class="zmdi zmdi-caret-right"></i>
+                    </a>
+                </li>
+                 <li>
+                    <a data-ui-sref-active="active" data-ng-click="edctrl.sidebarStat($event);logout()">
+                    <img src="assets/img/innova-icons/salir/salirN.png" width="30" alt="" >
+                    Salir
+                    <i class="zmdi zmdi-caret-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

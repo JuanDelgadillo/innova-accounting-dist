@@ -1,0 +1,87 @@
+<div class="container">
+    <div class="block-header">
+        <h4><i class="zmdi zmdi-info p-r-5"></i> Información <span class="breadcrumb-ico m-t-10 p-l-5 p-r-5"> <i class="zmdi zmdi-caret-right"></i> </span> <span class="active-state">Contacto </span></h4>
+    </div>
+    <div class="row">            
+            
+    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+	<form name="formContacto" ng-submit="contacto()" novalidate>
+    <div class="card m-t-30 ">
+						<div class="card-header ch-alt">
+							<h2>Formulario de Contacto <!--<small>...</small>--></h2>
+						</div>
+
+						<div class="card-body card-padding">
+						
+						<br>
+							
+							<div class="m-t-30 form-group fg-float">
+							    <div class="" ng-class="{ 'has-error': !formContacto.nombre.$valid && formContacto.nombre.$touched || formContacto.$submitted && !formContacto.nombre.$valid }" > 
+								<div class="fg-line">
+									<input type="text" name="nombre" ng-pattern="/^[A-Za-záéíóúñ ]{3,}$/" maxlength="30" ng-required="true" ng-model="nombre" placeholder="" class="form-control p-l-20">
+								</div>
+								<label class="fg-label">Nombre</label>
+								<span ng-show="formContacto.$submitted || formContacto.nombre.$touched">
+								  <small class="help-block error-span p-l-20" ng-show="formContacto.nombre.$error.required">El nombre es requerido</small>								  
+								  <small class="help-block error-span p-l-20" ng-show="formContacto.nombre.$error.pattern">El nombre debe ser valido.</small> 
+								</span>
+								</div>
+							</div>
+							<br>
+							<div class="m-t-30 form-group fg-float">
+							  <div class="" ng-class="{ 'has-error': !formContacto.correo.$valid && formContacto.correo.$touched || formContacto.$submitted && !formContacto.correo.$valid }" > 
+								<div class="fg-line">
+									<input type="email" name="correo" ng-required="true" ng-model="correo"  class="form-control p-l-20">
+								</div>
+								<label class="fg-label">Correo electrónico</label>
+								<span ng-show="formContacto.$submitted || formContacto.correo.$touched">
+								  <small class="help-block error-span p-l-20" ng-show="formContacto.correo.$error.required">El correo es requerido</small>								  
+								  <small class="help-block error-span p-l-20" ng-show="formContacto.correo.$error.email">El correo es invalido.</small>	
+								</span>
+								</div>
+							   </div>
+							
+							<br>
+							<div class="m-t-30 form-group fg-float">
+							   <div class="" ng-class="{ 'has-error': !formContacto.telefono.$valid && formContacto.telefono.$touched || formContacto.$submitted && !formContacto.telefono.$valid }" > 
+								<div class="fg-line">
+									<input type="text" ng-pattern="/^[0-9]{7,}$/" maxlength="20" name="telefono" ng-required="true" ng-model="telefono"  class="form-control p-l-20">
+								</div>
+								<label class="fg-label">Número Contacto</label>
+								<span ng-show="formContacto.$submitted || formContacto.telefono.$touched">
+								  <small class="help-block error-span p-l-20" ng-show="formContacto.telefono.$error.required">El telefono es requerido</small>
+                                  <small class="help-block error-span p-l-20" ng-show="formContacto.telefono.$error.pattern">El telefono debe ser valido.</small>								  
+								</span>
+								</div>
+							</div>
+							<br>
+							<div class="m-t-30 form-group fg-float">
+							   <div class="" ng-class="{ 'has-error': !formContacto.mensaje.$valid && formContacto.mensaje.$touched || formContacto.$submitted && !formContacto.mensaje.$valid }" > 
+								<div class="fg-line">
+									<textarea name="mensaje" maxlength="500" ng-required="true" ng-model="mensaje" class="form-control p-l-20" ></textarea>
+								</div>
+								<label class="fg-label">Mensaje</label>
+								<span ng-show="formContacto.$submitted || formContacto.mensaje.$touched">
+								  <small class="help-block error-span p-l-20" ng-show="formContacto.mensaje.$error.required">El mensaje es requerido</small>					  
+								</span>
+								</div>
+							</div>
+                            <br>
+							<button type="submit" class="m-l-20 btn btn-info">Enviar</button>
+							<button type="reset" ng-click="formContacto.$setPristine(); formContacto.$setUntouched(); newContaco();" class="btn btn-default waves-effect">Cancelar</button>
+							</br>
+							</br>
+							
+						</div>
+					</div>
+	</form>
+					
+	</div>
+
+
+</div>
+
+<script type="text/javascript">
+   $("html, body").animate({ scrollTop: 0},0, "linear", function() {});
+</script>
+

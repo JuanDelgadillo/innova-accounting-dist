@@ -1,0 +1,871 @@
+
+<a data-ui-sref="plan-embajador.comparte" ng-if="user.privilege === 2 || user.privilege === 1" class="btn bgm-lightblue btn-icon waves-effect waves-circle m-btn-ayuda">
+    <i style="margin-top: 11px;" class="zmdi zmdi-share zmdi-hc-fw"></i>
+</a>
+
+<header id="header" data-ng-include="'app/common/header/header.tpl.html'" data-ng-controller="headerCtrl as hctrl"></header>
+
+<section id="main">
+    <aside id="sidebar" data-ng-include="'app/common/sidebar-left/sidebar-left.tpl.html'" data-ng-class="{ 'toggled': edctrl.sidebarToggle.left === true }"></aside>
+    
+    <aside id="chat" data-ng-include="'app/common/chat/chat.tpl.html'" data-ng-controller="headerCtrl as hctrl" data-ng-class="{ 'toggled': edctrl.sidebarToggle.right === true }"></aside>
+    
+    <div ng-click="edctrl.sidebarToggle.left = false;edctrl.sidebarToggle.right = false">
+    <section id="content" data-ng-class="{ 'opaco': edctrl.sidebarToggle.left === true || edctrl.sidebarToggle.right === true }" >
+        
+<div class="block-header">
+    <p style="font-size: 22px;">INNOVA ACCOUNT - CUADRO DE MANDO</p>
+</div>
+<div class="dash-widgets">
+    <div class="row">
+        <div class="col-md-3 col-sm-6">
+            <div id="site-visits" class="dash-widget-item bgm-amber">
+                <div class="dash-widget-header">
+                    <div class="p-20">
+                        <div class="dash-widget-visits" data-sparkline-line></div>
+                    </div>
+                    <div class="dash-widget-title">Activos</div>
+                </div>
+
+                <div class="p-20">
+
+                    <small>Marzo</small>
+                    <h3 class="m-0 f-400">140.00,00</h3>
+
+                    <br/>
+
+                    <small>Febrero</small>
+                    <h3 class="m-0 f-400">140.00,00</h3>
+
+                    <br/>
+
+                    <small>Enero</small>
+                    <h3 class="m-0 f-400">140.00,00</h3>
+                </div>
+            </div>
+        </div> 
+
+        <div class="col-md-3 col-sm-6">
+            <div id="site-visits" class="dash-widget-item bgm-orange">
+                <div class="dash-widget-header">
+                    <div class="p-20">
+                        <div class="dash-widget-visits" data-sparkline-line></div>
+                    </div>
+                    <div class="dash-widget-title">Gastos</div>
+                </div>
+
+                <div class="p-20">
+
+                    <small>Marzo</small>
+                    <h3 class="m-0 f-400">140.00,00</h3>
+
+                    <br/>
+
+                    <small>Febrero</small>
+                    <h3 class="m-0 f-400">140.00,00</h3>
+
+                    <br/>
+
+                    <small>Enero</small>
+                    <h3 class="m-0 f-400">140.00,00</h3>
+                </div>
+            </div>
+        </div> 
+
+        <div class="col-md-3 col-sm-6">
+            <div id="site-visits" class="dash-widget-item bgm-lightgreen">
+                <div class="dash-widget-header">
+                    <div class="p-20">
+                        <div class="dash-widget-visits" data-sparkline-line></div>
+                    </div>
+                    <div class="dash-widget-title">Pasivos</div>
+                </div>
+
+                <div class="p-20">
+
+                    <small>Marzo</small>
+                    <h3 class="m-0 f-400">140.00,00</h3>
+
+                    <br/>
+
+                    <small>Febrero</small>
+                    <h3 class="m-0 f-400">140.00,00</h3>
+
+                    <br/>
+
+                    <small>Enero</small>
+                    <h3 class="m-0 f-400">140.00,00</h3>
+                </div>
+            </div>
+        </div> 
+
+        <div class="col-md-3 col-sm-6">
+            <div id="site-visits" class="dash-widget-item bgm-green">
+                <div class="dash-widget-header">
+                    <div class="p-20">
+                        <div class="dash-widget-visits" data-sparkline-line></div>
+                    </div>
+                    <div class="dash-widget-title">Ingresos</div>
+                </div>
+
+                <div class="p-20">
+
+                    <small>Marzo</small>
+                    <h3 class="m-0 f-400">140.00,00</h3>
+
+                    <br/>
+
+                    <small>Febrero</small>
+                    <h3 class="m-0 f-400">140.00,00</h3>
+
+                    <br/>
+
+                    <small>Enero</small>
+                    <h3 class="m-0 f-400">140.00,00</h3>
+                </div>
+            </div>
+        </div> 
+
+
+    </div>
+</div>
+<div class="mini-charts">
+    <div class="row">
+        <div class="col-sm-6 col-md-3">
+            <div class="mini-charts-item bgm-cyan">
+                <div class="clearfix">
+                    <div class="chart stats-bar" data-sparkline-bar></div>
+                    <div class="count">
+                        <small>Gamacias Netas</small>
+                        <h2>987,459</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3">
+            <div class="mini-charts-item bgm-lightgreen">
+                <div class="clearfix">
+                    <div class="chart stats-bar-2" data-sparkline-bar></div>
+                    <div class="count">
+                        <small>Ganancias Brutas</small>
+                        <h2>356,785K</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3">
+            <div class="mini-charts-item bgm-orange">
+                <div class="clearfix">
+                    <div class="chart stats-line" data-sparkline-line></div>
+                    <div class="count">
+                        <small>Ventas</small>
+                        <h2>$ 458,778</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3">
+            <div class="mini-charts-item bgm-bluegray">
+                <div class="clearfix">
+                    <div class="chart stats-line-2" data-sparkline-line></div>
+                    <div class="count">
+                        <small>Pedidos Mensuales</small>
+                        <h2>23,856</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dash-widgets">
+    <div class="row">
+        <div class="col-md-3 col-sm-6">
+            <div id="site-visits" class="dash-widget-item bgm-teal">
+                <div class="dash-widget-header">
+                    <div class="p-20">
+                        <div class="dash-widget-visits" data-sparkline-line></div>
+                    </div>
+
+                    <div class="dash-widget-title">Retorno de Inversion</div>
+
+                    <ul class="actions actions-alt">
+                        <li class="dropdown" dropdown>
+                            <a href="" dropdown-toggle>
+                                <i class="zmdi zmdi-more-vert"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li>
+                                    <a href="">Refresh</a>
+                                </li>
+                                <li>
+                                    <a href="">Manage Widgets</a>
+                                </li>
+                                <li>
+                                    <a href="">Widgets Settings</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="p-20">
+
+                    <small>4 Triemestre</small>
+                    <h3 class="m-0 f-400">47,896,536</h3>
+
+                    <br/>
+
+                    <small>3 Trimestre</small>
+                    <h3 class="m-0 f-400">24,456,799</h3>
+
+                    <br/>
+
+                    <small>2 Triemeters</small>
+                    <h3 class="m-0 f-400">13,965</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div id="pie-charts" class="dash-widget-item">
+                <div class="bgm-pink">
+                    <div class="dash-widget-header">
+                        <div class="dash-widget-title">Email Statistics</div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="text-center p-20 m-t-25">
+                        <div class="easy-pie main-pie" data-percent="75" data-easypie-chart>
+                            <div class="percent">45</div>
+                            <div class="pie-title">Total Emails Sent</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-t-20 p-b-20 text-center">
+                    <div class="easy-pie sub-pie-1" data-percent="56" data-easypie-chart>
+                        <div class="percent">56</div>
+                        <div class="pie-title">Bounce Rate</div>
+                    </div>
+                    <div class="easy-pie sub-pie-2" data-percent="84" data-easypie-chart>
+                        <div class="percent">84</div>
+                        <div class="pie-title">Total Opened</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div id="pie-charts" class="dash-widget-item">
+                <div class="bgm-orange">
+                    <div class="dash-widget-header">
+                        <div class="dash-widget-title">Email Statistics</div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="text-center p-20 m-t-25">
+                        <div class="easy-pie main-pie" data-percent="12" data-easypie-chart>
+                            <div class="percent">12</div>
+                            <div class="pie-title">Total Emails Sent</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-t-20 p-b-20 text-center">
+                    <div class="easy-pie sub-pie-1" data-percent="21" data-easypie-chart>
+                        <div class="percent">21</div>
+                        <div class="pie-title">Bounce Rate</div>
+                    </div>
+                    <div class="easy-pie sub-pie-2" data-percent="33" data-easypie-chart>
+                        <div class="percent">33</div>
+                        <div class="pie-title">Total Opened</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div id="pie-charts" class="dash-widget-item">
+                <div class="bgm-red">
+                    <div class="dash-widget-header">
+                        <div class="dash-widget-title">Email Statistics</div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="text-center p-20 m-t-25">
+                        <div class="easy-pie main-pie" data-percent="12" data-easypie-chart>
+                            <div class="percent">12</div>
+                            <div class="pie-title">Total Emails Sent</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-t-20 p-b-20 text-center">
+                    <div class="easy-pie sub-pie-1" data-percent="21" data-easypie-chart>
+                        <div class="percent">21</div>
+                        <div class="pie-title">Bounce Rate</div>
+                    </div>
+                    <div class="easy-pie sub-pie-2" data-percent="33" data-easypie-chart>
+                        <div class="percent">33</div>
+                        <div class="pie-title">Total Opened</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Line Chart with curved edges <small>Curved edges made possible using curvedLines Flot plugin.</small></h2>
+
+                    <ul class="actions">
+                        <li class="dropdown action-show" dropdown>
+                            <a href="" dropdown-toggle>
+                                <i class="zmdi zmdi-more-vert"></i>
+                            </a>
+
+                            <div class="dropdown-menu pull-right">
+                                <p class="p-20">
+                                    You can put anything here
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card-body">
+                    <div class="chart-edge">
+                        <div class="flot-chart" data-curvedline-chart></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Lines Chart <small>Same above example without curved edges.</small></h2>
+
+                    <ul class="actions">
+                        <li class="dropdown action-show" dropdown>
+                            <a href="" dropdown-toggle>
+                                <i class="zmdi zmdi-more-vert"></i>
+                            </a>
+
+                            <div class="dropdown-menu pull-right">
+                                <p class="p-20">
+                                    You can put anything here
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card-body">
+                    <div class="chart-edge">
+                        <div id="line-chart" data-line-chart class="flot-chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Bar Chart</h2>
+
+                    <ul class="actions">
+                        <li class="dropdown action-show" dropdown>
+                            <a href="" dropdown-toggle>
+                                <i class="zmdi zmdi-more-vert"></i>
+                            </a>
+
+                            <div class="dropdown-menu pull-right">
+                                <p class="p-20">
+                                    You can put anything here
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card-body card-padding-sm">
+                    <div class="flot-chart" data-bar-chart></div>
+                    <div class="flc-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Dynamic Chart</h2>
+
+                    <ul class="actions">
+                        <li class="dropdown action-show" dropdown>
+                            <a href="" dropdown-toggle>
+                                <i class="zmdi zmdi-more-vert"></i>
+                            </a>
+
+                            <div class="dropdown-menu pull-right">
+                                <p class="p-20">
+                                    You can put anything here
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card-body card-padding-sm">
+                    <div class="flot-chart" data-dynamic-chart></div>
+                    <div class="flc-dynamic"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Pie Chart</h2>
+
+                    <ul class="actions">
+                        <li class="dropdown action-show" dropdown>
+                            <a href="" dropdown-toggle>
+                                <i class="zmdi zmdi-more-vert"></i>
+                            </a>
+
+                            <div class="dropdown-menu pull-right">
+                                <p class="p-20">
+                                    You can put anything here
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card-body card-padding">
+                    <div id="pie-chart" class="flot-chart-pie" data-pie-donut></div>
+                    <div class="flc-pie hidden-xs"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Donut Chart</h2>
+
+                    <ul class="actions">
+                        <li class="dropdown action-show" dropdown>
+                            <a href="" dropdown-toggle>
+                                <i class="zmdi zmdi-more-vert"></i>
+                            </a>
+
+                            <div class="dropdown-menu pull-right">
+                                <p class="p-20">
+                                    You can put anything here
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card-body card-padding">
+                    <div id="donut-chart" class="flot-chart-pie" data-pie-donut></div>
+                    <div class="flc-donut hidden-xs"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<div class="row">
+    <div class="col-sm-6">
+        <!-- Recent Items -->
+        <div class="card" data-ng-controller="recentitemCtrl as rictrl">
+            <div class="card-header">
+                <h2>Productividad de Empleados<small></small></h2>
+                <hr class="p-b-0">
+                <!--<ul class="actions">
+                    <li class="dropdown" dropdown>
+                        <a href="" dropdown-toggle>
+                            <i class="zmdi zmdi-more-vert"></i>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li>
+                                <a href="">Actualizar</a>
+                            </li>
+                            <li>
+                                <a href="">Configuración</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>-->
+            </div>
+
+            <div class="card-body">
+                <div class="listview">
+
+                    <div class="lv-item" href="" >
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="lv-img-sm" data-ng-src="assets/img/embajadores/franklin.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <div class="lv-title">Franklin Añez</div>
+                                <small class="lv-small">{{ w.text }}</small>
+                               ...       
+                                <div class="pull-right">
+                                   <i class="zmdi zmdi-star zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star-half zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star-half zmdi-hc-fw"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lv-item" href="" >
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="lv-img-sm" data-ng-src="assets/img/embajadores/omar.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <div class="lv-title">Omar Jaimes</div>
+                                <small class="lv-small">{{ w.text }}</small>
+                               ...        
+                                <div class="pull-right">
+                                   <i class="zmdi zmdi-star zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star-half zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star-half zmdi-hc-fw"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="lv-item" href="" >
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="lv-img-sm" data-ng-src="assets/img/embajadores/yamil.png" alt="">
+                            </div>
+                            <div class="media-body">
+                                <div class="lv-title">Yamil Zapata</div>
+                                <small class="lv-small">{{ w.text }}</small>
+                                ...        
+                                <div class="pull-right">
+                                   <i class="zmdi zmdi-star zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star-half zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star-half zmdi-hc-fw"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lv-item" href="" >
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="lv-img-sm" data-ng-src="assets/img/embajadores/elvis.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <div class="lv-title">Elvis Higuera</div>
+                                <small class="lv-small">{{ w.text }}</small>
+                                ...           
+                                <div class="pull-right">
+                                   <i class="zmdi zmdi-star zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star-half zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star-half zmdi-hc-fw"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lv-item" href="" >
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="lv-img-sm" data-ng-src="assets/img/embajadores/eduardo.png" alt="">
+                            </div>
+                            <div class="media-body">
+                                <div class="lv-title">Eduardo Gómez</div>
+                                <small class="lv-small">{{ w.text }}</small>
+                                ...           
+                                <div class="pull-right">
+                                   <i class="zmdi zmdi-star zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star-half zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star-half zmdi-hc-fw"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lv-item" href="#" >
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="lv-img-sm" data-ng-src="assets/img/embajadores/luis.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <div class="lv-title">Luis Villarroel</div>
+                                <small class="lv-small">{{ w.text }}</small>
+                                ...           
+                                <div class="pull-right">
+                                   <i class="zmdi zmdi-star zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star-half zmdi-hc-fw"></i>
+                                   <i class="zmdi zmdi-star-half zmdi-hc-fw"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clearfix"></div>
+
+                    <!--<a class="lv-footer" href="">Ver todos</a>-->
+                </div>
+            </div>
+            <div id="recent-items-chart" class="flot-chart" data-line-chart></div>
+        </div>
+
+        <!-- Todo Lists Agenda -->
+        <!--<div id="todo-lists" data-ng-controller="todoCtrl as tctrl">
+            <div class="tl-header">
+                <h2>Agenda</h2>
+                <small>Agrega, edita y administra tu lista de tareas</small>
+
+                <ul class="actions actions-alt">
+                    <li class="dropdown" dropdown>
+                        <a href="" dropdown-toggle>
+                            <i class="zmdi zmdi-more-vert"></i>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li>
+                                <a href="">Actualizar</a>
+                            </li>
+                            <li>
+                                <a href="">Administrar widgets</a>
+                            </li>
+                            <li>
+                                <a href="">Configurar widgets</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="tl-body">
+                
+                
+                <div id="add-tl-item" data-ng-class="{ 'toggled': tctrl.addTodoStat }" data-ng-click="tctrl.addTodoStat = true">
+                    <i class="add-new-item zmdi zmdi-plus" data-ng-click="tctrl.addTodo($event)"></i>
+
+                    <div class="add-tl-body">
+                        <textarea placeholder="Que quieres hacer..." data-ng-model="tctrl.todo"></textarea>
+
+                        <div class="add-tl-actions">
+                            <a class="zmdi zmdi-close" data-tl-action="dismiss" data-ng-click="tctrl.addTodoStat = false; $event.stopPropagation()"></a>
+                            <a class="zmdi zmdi-check" data-tl-action="save" data-ng-click="tctrl.addTodoStat = false; $event.stopPropagation()"></a>
+                        </div>
+                    </div>
+                </div> 
+
+
+                <div class="checkbox media" data-ng-repeat="w in tctrl.tdResult.list">
+                    <div class="pull-right">
+                        <ul class="actions actions-alt">
+                            <li class="dropdown" dropdown>
+                                <a href="" dropdown-toggle>
+                                    <i class="zmdi zmdi-more-vert"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><a href="">Eliminar</a></li>
+                                    <li><a href="">Archivar</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="media-body">
+                        <label>
+                            <input type="checkbox">
+                            <i class="input-helper"></i>
+                            <span>{{ w.todo }}</span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </div>-->
+    </div>
+
+    <div class="col-sm-6">
+        <!-- Calendar -->
+        <section data-ng-controller="calendarCtrl as clctrl">
+            <div id="calendar-widget" data-calendar data-action-links="clctrl.actionMenu" data-select="clctrl.onSelect(start, end)"></div>
+            
+        <script type="text/ng-template" id="addEvent.html">
+            <div class="modal-header">
+                <h4 class="modal-title">Agregar curso</h4>
+            </div>
+            <div class="modal-body">
+                <form class="addEvent" role="form">
+                    <div class="form-group" data-ng-class="{ 'has-error': calendarData.eventName === '' }">
+                        <label for="eventName">Nombre</label>
+                        <div class="fg-line">
+                            <div class="select">
+                                <select class="form-control" id="especialidadCurs">
+                                    <option value="">- Seleccione -</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventName">Color de etiqueta</label>
+                        <div class="event-tag" data-ng-class="{ 'active': activeState }">
+                            <span data-ng-repeat="w in tags" data-tag="{{ w }}" class="{{ w }}" data-ng-class="{ 'selected': activeState === $index }" data-ng-click="onTagClick(w, $index)"></span>
+                        </div>
+                    </div>
+
+                    <input type="hidden" data-ng-model="getStart" />
+                    <input type="hidden" data-ng-model="getEnd" />
+
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link" data-ng-click="addEvent()">Agregar</button>
+                <button type="button" class="btn btn-link" data-ng-click="eventDismiss()">Cancelar</button>
+            </div>
+        </script>
+        </section>
+
+        
+
+        <!-- Fama -->
+        <!--<div class="card" data-ng-controller="recentpostCtrl as rpctrl">
+            <div class="card-header ch-alt m-b-20 bgm-pink">
+                <h2 class="text-center"><i class="zmdi zmdi-star-half zmdi-hc-fw"></i><i class="zmdi zmdi-star-half zmdi-hc-fw"></i> Fama <i class="zmdi zmdi-star-half zmdi-hc-fw"></i> <i class="zmdi zmdi-star-half zmdi-hc-fw"></i> <br><small>Hazte parte del concurso  de los  alumnos más famosos, comparte tu academia diariamente  en las redes sociales y ya estás participando Participa y gana </small></h2>
+                
+
+                <i class="btn-float-pregunta c-blanco zmdi zmdi-help" ng-click="info('lg')" ></i>
+
+                
+            </div>
+
+            <div class="card-body">
+                <div class="listview">
+
+                    <a class="lv-item" href="" data-ng-repeat="w in rpctrl.rpResult.list">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="lv-img-sm" data-ng-src="assets/img/profile-pics/{{ w.img }}" alt="">
+                            </div>
+                            <div class="media-body">
+                                <div class="lv-title">{{ w.user }}</div>
+                                <small class="lv-small">{{ w.text }}</small>
+                                Academia presencia latina –Venezuela (estado Aragua)       
+                                <div class="pull-right">
+                                    345 <i class="zmdi zmdi-star zmdi-hc-fw"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <div class="clearfix"></div>
+
+                    <a class="lv-footer" href="">Ver todos</a>
+                </div>
+            </div>
+        </div>-->
+
+        <!-- Recent Posts -->
+        <!--<div class="card" data-ng-controller="recentpostCtrl as rpctrl">
+            <div class="card-header ch-alt m-b-20 bgm-pink">
+                <h2 class="text-center"><i class="zmdi zmdi-star-half zmdi-hc-fw"></i><i class="zmdi zmdi-star-half zmdi-hc-fw"></i> Fama <i class="zmdi zmdi-star-half zmdi-hc-fw"></i> <i class="zmdi zmdi-star-half zmdi-hc-fw"></i> <br><small>Hazte parte del concurso  de los  alumnos más famosos, comparte tu academia diariamente  en las redes sociales y ya estás participando Participa y gana </small></h2>
+                <ul class="actions">
+                    <li>
+                        <a href="">
+                            <i class="zmdi zmdi-refresh-alt"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="zmdi zmdi-download"></i>
+                        </a>
+                    </li>
+                    <li class="dropdown" dropdown>
+                        <a href="" dropdown-toggle>
+                            <i class="zmdi zmdi-more-vert"></i>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li>
+                                <a href="">Cambiar rango de fecha</a>
+                            </li>
+                            <li>
+                                <a href="">Otras configuraciones</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <button class="btn bgm-cyan btn-float">
+
+                <i class="f-30 btn-float-pregunta c-blanco zmdi zmdi-help"></i>
+
+                </button>
+            </div>
+
+            <div class="card-body">
+                <div class="listview">
+
+                    <a class="lv-item" href="" data-ng-repeat="w in rpctrl.rpResult.list">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="lv-img-sm" data-ng-src="assets/img/profile-pics/{{ w.img }}" alt="">
+                            </div>
+                            <div class="media-body">
+                                <div class="lv-title">{{ w.user }}</div>
+                                <small class="lv-small">{{ w.text }}</small>
+                                Academia presencia latina –Venezuela (estado Aragua)       
+                                <div class="pull-right">
+                                    345 <i class="zmdi zmdi-star zmdi-hc-fw"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <div class="clearfix"></div>
+
+                    <a class="lv-footer" href="">Ver todos</a>
+                </div>
+            </div>
+        </div>-->
+    </div>
+</div>
+        </div>
+    </section></div>
+    
+</section>
+
+<footer id="footer" ng-init="zona=true;" data-ng-include="'app/common/footer/footer.tpl.html'"></footer>

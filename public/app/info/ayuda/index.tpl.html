@@ -1,0 +1,288 @@
+<div class="container">
+  <div class="card-body p-t-0 " data-ng-controller="reservacionController">      
+    <img ng-src="/assets/img/1440_x_500_centro_de_ayuda.jpg" class="img-responsive">
+  </div>
+</div>
+<div class="container">
+    <div class="block-header">
+        <h4><i class="zmdi zmdi-info p-r-5"></i> Información <span class="breadcrumb-ico m-t-10 p-l-5 p-r-5"> <i class="zmdi zmdi-caret-right"></i> </span> <span class="active-state">Ayuda</h4>
+    </div>
+    <div clasa="row">            
+            
+
+    <div class="card">
+        <!--<div class="card-header">
+            <h2>Buttons <small><a target="_blank" class="c-gray" href="http://angular-ui.github.io/bootstrap/#/buttons">ui.bootstrap.buttons</a></small></h2>
+        </div>-->
+
+        <div class="card-body card-padding p-t-20 p-b-10 ng-scope" ng-init="ayuda.configuracion=true;ayuda.cargainicial=true;ayuda.participante=true;" >
+            <div class="row">
+                <!--<div class="text-center">                
+                    <button ng-click="ayuda.general=true;ayuda.configuracion=false;" class="btn btn-primary">Menú general</button>
+                    <button ng-click="ayuda.general=false;ayuda.configuracion=true;" class="btn btn-primary">Menú configuración</button>
+                </div>-->
+                <div class="col-sm-12"><ul class="tab-nav-general tn-justified m-b-30">
+                        <li class="ng-isolate-scope btn-wave animated" id="b1-footer-tabs" ng-click="ayuda.general=true;ayuda.configuracion=false;" ><a>Menú general</a></li>
+                        <li class="btn-wave animated" id="b2-tabs" ng-click="ayuda.general=false;ayuda.configuracion=true;"  ><a>Menú configuración</a></li>                       
+                   </ul>
+              </div>
+                <div class="col-sm-3" ng-show="ayuda.general">
+                   <h3 class="p-l-20">General</h3>
+                   <div class="list-group">
+                        <a href="" class="list-group-item" ng-click="ayuda.participante=true; ayuda.agendar=false; ayuda.visitantes=false; ayuda.checador=false; ayuda.consulta=false; ayuda.venta=false;"><i class="zmdi zmdi-caret-right"></i> Agregar alumno e instructores</a>
+                        <a href="" class="list-group-item" ng-click="ayuda.participante=false; ayuda.agendar=true; ayuda.visitantes=false; ayuda.checador=false; ayuda.consulta=false; ayuda.venta=false;"><i class="zmdi zmdi-caret-right"></i> Agendar cursos</a>
+                        <a href="" class="list-group-item" ng-click="ayuda.participante=false; ayuda.agendar=false; ayuda.visitantes=true; ayuda.checador=false; ayuda.consulta=false; ayuda.venta=false;" ><i class="zmdi zmdi-caret-right"></i> Visitante presencial</a>
+                        <a href="" class="list-group-item" ng-click="ayuda.participante=false; ayuda.agendar=false; ayuda.visitantes=false; ayuda.checador=true; ayuda.consulta=false; ayuda.venta=false;" ><i class="zmdi zmdi-caret-right"></i> Checador de asistencia</a>
+                        <a href="" class="list-group-item" ng-click="ayuda.participante=false; ayuda.agendar=false; ayuda.visitantes=false; ayuda.checador=false; ayuda.consulta=true; ayuda.venta=false;" ><i class="zmdi zmdi-caret-right"></i> Consultas</a>
+                        <a href="" class="list-group-item" ng-click="ayuda.participante=false; ayuda.agendar=false; ayuda.visitantes=false; ayuda.checador=false; ayuda.consulta=false; ayuda.venta=true;"><i class="zmdi zmdi-caret-right"></i> Punto de venta</a>
+                        
+                    </div>
+                </div>
+                <div class="col-sm-3" ng-show="ayuda.configuracion"  >
+                   <h3 class="p-l-20">Configuración</h3>
+                   <div class="list-group">
+                        <a href="" class="list-group-item" ng-click="ayuda.cargainicial=true; ayuda.curso=false; ayuda.usuario=false; ayuda.especialidad=false; ayuda.estudio=false; ayuda.programa=false;"><i class="zmdi zmdi-caret-right"></i> Carga inicial</a>
+                        <a href="" class="list-group-item" ng-click="ayuda.cargainicial=false; ayuda.curso=true; ayuda.usuario=false; ayuda.especialidad=false; ayuda.estudio=false; ayuda.programa=false;"><i class="zmdi zmdi-caret-right"></i> Registro de curso</a>
+                        <a href="" class="list-group-item" ng-click="ayuda.cargainicial=false; ayuda.curso=false; ayuda.usuario=true; ayuda.especialidad=false; ayuda.estudio=false; ayuda.programa=false;" ><i class="zmdi zmdi-caret-right"></i> Usuario</a>
+                        <a href="" class="list-group-item" ng-click="ayuda.cargainicial=false; ayuda.curso=false; ayuda.usuario=false; ayuda.especialidad=true; ayuda.estudio=false; ayuda.programa=false;" ><i class="zmdi zmdi-caret-right"></i> Especialidad</a>
+                        <a href="" class="list-group-item" ng-click="ayuda.cargainicial=false; ayuda.curso=false; ayuda.usuario=false; ayuda.especialidad=false; ayuda.estudio=true; ayuda.programa=false;" ><i class="zmdi zmdi-caret-right"></i> Estudio / sala</a>
+                        <a href="" class="list-group-item" ng-click="ayuda.cargainicial=false; ayuda.curso=false; ayuda.usuario=false; ayuda.especialidad=false; ayuda.estudio=false; ayuda.programa=true;"><i class="zmdi zmdi-caret-right"></i> Programa de baile/ paquetes</a>
+                        
+                    </div>
+                </div>
+                
+                <div class="col-sm-9 p-t-20" ng-show="ayuda.general">
+                    <div ng-show="ayuda.participante" >
+                     <h4><i class="zmdi zmdi-caret-right"></i> Agregar participantes e instructores</h4>
+                     <hr>
+                     <p class="text-justify p-t-10">Esta Característica  tiene como objetivo principal  agregar y gestionar las  actividades o personas dentro de la aplicación, tales como, alumnos e instructores. A través de la ventana desplegable, al darle clic a cualquiera de las opciones  podrás agregar  o gestionar ingresando los datos básicos solicitados por el sistema en sus respectivas planillas. La sección de  participantes te  brinda la oportunidad de operar  cada uno de estos módulos de manera particular accediendo de forma rápida y  sencilla.</p>
+
+                     <p>
+                      <b>¿Cómo agregar participantes? </b> <a ng-click="video.participante=!video.participante" class="">Ver Video</a>
+                     </p>
+
+                     <iframe ng-show="video.participante" src="https://player.vimeo.com/video/146586946?loop=1&color=c14bcc" width="100%" height="350"
+      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                    <div ng-show="ayuda.agendar" >
+                     <h4><i class="zmdi zmdi-caret-right"></i> Agendar cursos</h4>
+                     <hr>
+                     <p class="text-justify p-t-10">Esta Característica  tiene como objetivo principal  agendar las actividades ubicadas  dentro de la opción agendar, tales como, cursos y clases personalizadas. A través de la ventana desplegable, al darle clic a cualquiera de las opciones  podrás agregar  o gestionar ingresando los datos básicos solicitados por el sistema en sus respectivas planillas. La sección de  agendar  te  brinda la oportunidad de operar  cada uno de estos módulos de manera particular accediendo de forma rápida y  sencilla.</p>
+
+                     <p>
+                      <b>¿Cómo agregar Cursos? </b> <a ng-click="video.agendar=!video.agendar" class="">Ver Video</a>
+                     </p>
+
+                     <iframe ng-show="video.agendar" src="https://player.vimeo.com/video/146586946?loop=1&color=c14bcc" width="100%" height="350"
+      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                    <div ng-show="ayuda.visitantes" >
+                     <h4><i class="zmdi zmdi-caret-right"></i> Visitantes presenciales </h4>
+                     <hr>
+                     <p class="text-justify p-t-10">En visitantes presenciales tendrás la oportunidad de generar una base de datos con información de interés, de todos aquellos que  visiten tu academia, ingresa fácilmente a un panel de consultas podrás obtener la información que necesitas  saber de  tus posibles futuros clientes.</p>
+
+                     <p>
+                      <b>¿Cómo agregar visitantes presenciales?  </b> <a ng-click="video.visitantes=!video.visitantes" class="">Ver Video</a>
+                     </p>
+
+                     <iframe ng-show="video.visitantes" src="https://player.vimeo.com/video/146586946?loop=1&color=c14bcc" width="100%" height="350"
+      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                    <div ng-show="ayuda.checador" >
+                     <h4><i class="zmdi zmdi-caret-right"></i> Checador de asistencia </h4>
+                     <hr>
+                     <p class="text-justify p-t-10">Desde el checador  podrás controlar  la asistencia de tus alumnos, facilitando en un 100% tus tareas en el área de recepción, el administrador deberá ingresa  ingresar sólo su número de cédula del alumno que desee registrar o ubicarlo por el nombre o apellido, el checador verifica su asistencia y te informa del estatus, económico, horarios, días de clases  y otros datos importantes del alumno. Permite que el sistema haga el trabajo duro, sólo hace falta que el alumno sea parte de la base de datos y con ingresar sus información, ya disfrutarás de esta poderosa funcionalidad.</p>
+
+                     <p>
+                      <b>¿Cómo registrar la asistencia  a un alumno?  </b> <a ng-click="video.checador=!video.checador" class="">Ver Video</a>
+                     </p>
+
+                     <iframe ng-show="video.checador" src="https://player.vimeo.com/video/146586946?loop=1&color=c14bcc" width="100%" height="350"
+      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                    <div ng-show="ayuda.consulta" >
+                     <h4><i class="zmdi zmdi-caret-right"></i> Consultas </h4>
+                     <hr>
+                     <p class="text-justify p-t-10">La sección de “consultas” te brinda la oportunidad de recoger los informes y estadísticas de las operaciones que se desarrollan dentro de la plataforma a continuación mostraremos los reportes que actualmente ofrece  la plataforma.</p>
+                     <p>
+                        <i class="zmdi zmdi-check"></i> Participantes 
+                     </p> 
+                     <p>
+                        <i class="zmdi zmdi-check"></i> Administrativos 
+                     </p>
+                     <p>
+                        <i class="zmdi zmdi-check"></i> Instructores 
+                     </p>
+                     <p>
+                        <i class="zmdi zmdi-check"></i> Visitantes presenciales 
+                     </p>
+                     <p>
+                      <b>¿Cómo adquirir un reporte?  </b> <a ng-click="video.consulta=!video.consulta" class="">Ver Video</a>
+                     </p>
+
+                     <iframe ng-show="video.consulta" src="https://player.vimeo.com/video/146586946?loop=1&color=c14bcc" width="100%" height="350"
+      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                    <div ng-show="ayuda.venta" >
+                     <h4><i class="zmdi zmdi-caret-right"></i> Crear gestiones administrativas (Punto de ventas ) </h4>
+                     <hr>
+                     <p class="text-justify p-t-10">En nuestro módulo Punto de venta contamos con las herramientas necesarias para poder controlar y operar el flujo económico de manera rápida y fácil, desde el módulo de punto de venta podrás: realizar compras, abono, acuerdos de pago, devolución, y adelanto, estas son las  funcionalidades básicas e  importantes para el buen funcionamiento de tu academia.</p>
+
+                     <p>
+                      <b>¿Cómo crear  gestiones administrativas pulsa aquí?  </b> <a ng-click="video.venta=!video.venta" class="">Ver Video</a>
+                     </p>
+
+                     <iframe ng-show="video.venta" src="https://player.vimeo.com/video/146586946?loop=1&color=c14bcc" width="100%" height="350"
+      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-9 p-t-20" ng-show="ayuda.configuracion" >
+                   <div ng-show="ayuda.cargainicial" >
+                     <h4><i class="zmdi zmdi-caret-right"></i> Carga inicial</h4>
+                     <hr>
+                     <p class="text-justify p-t-10">Disponte a llenar los datos solicitados para el registro absoluto de tu academia es muy importante destacar que los datos ingresados serán reflejados en facturas reportes,  consultas, de esta forma, los clientes tendrán la visibilidad del mismo a  través de su cuenta de usuarios, por lo tanto, debes cuidar cualquier detalle o información pertinente en el ingreso de los datos,  para  manejar una comunicación acertada con tus clientes, Esto te ayudará a tener una presencia administrativa con una propia identidad.</p>
+
+                     <p>
+                      <b>¿Cómo llenar la carga inicial?</b> <a ng-click="video.cargainicial=!video.cargainicial" class="">Ver Video</a>
+                     </p>
+
+                     <iframe ng-show="video.cargainicial" src="https://player.vimeo.com/video/146586946?loop=1&color=c14bcc" width="100%" height="350"
+      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+
+                    <div ng-show="ayuda.curso" >
+                     <h4><i class="zmdi zmdi-caret-right"></i> Registro de curso</h4>
+                     <hr>
+                     <p class="text-justify p-t-10">En el registro de cursos  tendrás la oportunidad de agregar las distintas clases grupales  que ofreces en tu academia, también podrás permitir o restringir el género dentro de los cursos, tales como  (hombre – mujer) ya por último podrás  editar o modificar los precios y la forma de pago, tales como, de manera  mensual trimestral o anual. </p>
+
+                     <p>
+                      <b>¿Cómo crear un registro de curso?</b> <a ng-click="video.curso=!video.curso" class="">Ver Video</a>
+                     </p>
+
+                      <iframe ng-show="video.curso" src="https://player.vimeo.com/video/146586946?loop=1&color=c14bcc" width="100%" height="350"
+      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+
+                   <div ng-show="ayuda.usuario">
+                      <h4><i class="zmdi zmdi-caret-right"></i> Usuario</h4>
+                      <hr>
+                      <p class="text-justify p-t-10">Crea tu equipo mediante la asignación de diferentes niveles de acceso en función de las responsabilidades de cada miembro. El propietario de la cuenta tiene acceso a todos los diferentes módulos, así como la capacidad de modificar estos, junto con la concesión de acceso a otros usuarios.</p>
+
+                      <p>
+                        <b>¿Cómo crear un  usuario?</b> <a ng-click="video.usuario=!video.usuario" class="">Ver Video</a>
+                      </p>
+
+                      <iframe ng-show="video.usuario" src="https://player.vimeo.com/video/146586946?loop=1&color=c14bcc" width="100%" height="350"
+      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                   </div>
+
+                   <div ng-show="ayuda.especialidad" > 
+                      <h4><i class="zmdi zmdi-caret-right"></i> Especialidad</h4>
+                      <hr>
+                      <p class="text-justify p-t-10">Se refiere a los estilos de baile generales que se  imparten en la academia, el sistema Easy dance  presenta una lista pre establecida  bailes o danzas generales ,sin embargo Desde allí tendrás la oportunidad de editar un género o varios  en caso que lo desees o presentes la necesidad de crearlo.</p>
+
+                      <p>
+                      <b>¿Cómo crear una especialidad?</b> <a ng-click="video.especialidad=!video.especialidad" class="">Ver Video</a>
+                      </p>
+
+                      <iframe ng-show="video.especialidad" src="https://player.vimeo.com/video/146586946?loop=1&color=c14bcc" width="100%" height="350"
+      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+                   </div>
+
+                   <div ng-show="ayuda.estudio" > 
+                      <h4><i class="zmdi zmdi-caret-right"></i> Estudio / sala</h4>
+                      <hr>
+                      <p class="text-justify p-t-10">Easy dance te brinda la oportunidad de seleccionar y editar  el nombre de tu estudio de baile, en caso que tengas uno (1) o más salones de baile, de igual manera, podrás editar y crear  diversos salones en diferentes áreas  para gestionar tus cursos dentro de la organización.</p>
+
+                      <p>
+                      <b>¿Cómo crear un estudio o sala?</b> <a ng-click="video.estudio=!video.estudio" class="">Ver Video</a>
+                      </p>
+
+                      <iframe ng-show="video.estudio" src="https://player.vimeo.com/video/146586946?loop=1&color=c14bcc" width="100%" height="350"
+      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                   </div>
+
+                   <div ng-show="ayuda.programa"> 
+                     <h4><i class="zmdi zmdi-caret-right"></i> Programa de baile/ paquetes</h4>
+                     <hr>
+                     <p class="text-justify p-t-10">Esta se refiere a todas aquellas academias en el que su sistema laboral  o procedimientos indican que, establecen un  horario fijo para cualquier tipo de clases, por lo tanto, todos aquellos alumnos que deseen realizar las clases podrán ingresar en cualquier momento y fecha que hayan decidido  iniciar dentro del grupo, sin que la academia haya asignado una mensualidad fija para el colectivo , de esa forma la academia podrá ofrecer paquetes o distintos programas de bailes  y costos  para cada alumno, bien sea por mensualidades con diversos privilegios de costos, paquetes o programas de baile que se adapten a las necesidades del cliente.</p>
+
+                     <p>
+                      <b>¿Cómo agregar un programa de baile/ paquetes.?</b> <a ng-click="video.programa=!video.programa" class="">Ver Video</a>
+                     </p>
+
+                     <iframe ng-show="video.programa" src="https://player.vimeo.com/video/146586946?loop=1&color=c14bcc" width="100%" height="350"
+      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+
+                  
+                  </div>
+
+                </div>
+                <div class="col-xs-12"> 
+                   
+                </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+
+<!--<div class="card">
+        <div class="listview lv-bordered lv-lg">
+          <div class="lv-header-alt p-b-0 clearfix">       
+                            
+          </div>
+
+          <div class="lv-body ">                    
+                <div class="col-sm-3">
+                <br><br>aaaa
+                </div>
+                <div class="col-sm-9">
+                <div class="table-responsive">
+                <table class="table table-striped ">
+                 <tr>
+                    <th>Instructor</th>
+                    <th>Cupos Damas</th>
+                    <th>Cupos Caballeros</th>
+                 </tr>
+                 <tr>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                 </tr>
+                 <tr>
+                    <th>Fecha</th>
+                    <th>Dias</th>
+                    <th>Hora</th>
+                 </tr>
+                 <tr>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                 </tr>                 
+                 <tr>                    
+                    <th>Nivel</th>
+                    <th>Costo Inscripción</th>
+                    <th>Costo Mensualidad</th>
+                 </tr>
+                 <tr>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>                   
+                 </tr>
+                </table>
+                </div>           
+          
+          </div>
+        </div>
+</div>
+</div>-->   
+</div>
+<script type="text/javascript">
+   $("html, body").animate({ scrollTop: 0},0, "linear", function() {});   
+</script>

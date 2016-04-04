@@ -1,0 +1,34 @@
+<form name="especialidadForm" ng-submit="save()" role="form" novalidate>
+  <div class="modal-header bgm-morado-popup">
+    <h4 class="modal-title">
+      <i class="flaticon-especialidad ico-25 p-r-5"></i> Categorías
+      <i class="zmdi zmdi-caret-right"></i> Especialidad 
+      <span class="pull-right modalClose" ng-click="$dismiss('cancel')" ><i class="zmdi zmdi-close"></i></span>
+    </h4>
+  </div>
+  <div class="modal-body">
+    <div class="card-body">
+      <div class="row p-r-15 p-l-15 p-b-10 p-t-30">
+        <div class="form-group col-sm-5" ng-class="{ 'has-error': !especialidadForm.nombreEsp.$valid && especialidadForm.nombreEsp.$touched || especialidadForm.$submitted && !especialidadForm.nombreEsp.$valid }">
+          <div class="fg-line">
+            <label for="nombreEspecialidad" class="f-500 c-black m-b-15 ">Nombre <span class="c-red">*</span></label>
+            <input type="text" class="form-control input-sm" name="nombreEsp" ng-required="true" ng-model="especialidad.nombre" placeholder="Nombre" ng-trim="false" maxlength="40" >
+          </div>
+          <span ng-show="especialidadForm.$submitted || especialidadForm.nombreEsp.$touched">
+            <small class="help-block error-span" ng-show="especialidadForm.nombreEsp.$error.required">El nombre es requerido.</small>    
+          </span>
+        </div>
+        <div class="col-sm-7 p-b-5">
+          <label for="descripcionEspecialidad" class="f-500 c-black m-b-15">Descripción </label>
+            <div class="fg-line">
+              <textarea class="form-control" rows="4" id="descripcionEspecialidad" ng-model="especialidad.descripcion" placeholder="Descripción de la especialidad" ng-trim="false" maxlength="300" ></textarea>             
+            </div> <small class="pull-right"> {{300 - especialidad.descripcion.length}} caracteres restantes</small>
+        </div>        
+      </div>
+    </div>                  
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-primary waves-effect">Guardar</button>
+    <button type="button"  ng-click="$dismiss('cancel')" class="btn btn-default waves-effect">Cancelar</button> 
+  </div>
+</form>

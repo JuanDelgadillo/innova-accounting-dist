@@ -1,0 +1,622 @@
+
+
+
+
+<script type="text/ng-template" id="myModalCargaID.html">
+<div class="modal-header bgm-morado-popup">
+        <h4 class="modal-title">
+            <i class="zmdi flaticon-ca-identidad ico-25"></i> Carga Inicial
+            <span style="top:14px;" class="pull-right modalClose" ng-click="$dismiss('cancel')"><i class="zmdi zmdi-close"></i>
+            </span>
+        </h4>
+    </div>
+<div class="modal-body animated">
+    <div class="row p-t-20"> 
+        <div class="form-group col-sm-12" ng-class="{ 'has-error': !cargaInicialForm.identidadFiscal.$valid && cargaInicialForm.identidadFiscal.$touched || cargaInicialForm.$submitted && !cargaInicialForm.identidadFiscal.$valid }">
+                        <label class="f-500 c-black m-b-15 ">Identidad fiscal <span class="c-red">*</span></label> <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-title="Número de identificación  fiscal:" popover="Indique el número de identidad de la empresa, en caso de no poseerlo, ingrese su número de identidad personal, los datos deben estar bien suministrado, debido a que estos se reflejaran en la factura o recibo de pago." title="Ayuda de Easy Dance" popover-trigger="mouseenter" ></i>
+                        <div class="fg-line">
+                          <input type="text" class="form-control input-sm" name="identidadFiscal" placeholder="Ej: J-29672828-9" ng-model="cargaInicial.identidadFiscal" ng-required="true" maxlength="20" />
+                        </div>
+            <span ng-show="cargaInicialForm.$submitted || cargaInicialForm.identidadFiscal.$touched">
+                <small class="help-block error-span" ng-show="cargaInicialForm.identidadFiscal.$error.required">
+                El número de identidad fiscal es requerido.
+                </small>   
+            </span>
+          </div>
+        <div class="clearfix"></div>    
+    </div>       
+</div>
+<div class="modal-footer">    
+    <button type="submit" class="btn btn-primary btn-sm waves-effect waves-effect">Agregar</button>
+    <button type="button" ng-click="$dismiss('cancel')"
+      class="btn btn-default btn-sm waves-effect waves-effect">Cancelar
+    </button>
+    
+</div>
+
+</script>
+
+
+<script type="text/ng-template" id="myModalCargaRetraso.html">
+<div class="modal-header bgm-morado-popup">
+        <h4 class="modal-title">
+            <i class="zmdi flaticon-ca-porcentaje-de-retraso f-15"></i> Carga Inicial
+            <span style="top:14px;" class="pull-right modalClose" ng-click="$dismiss('cancel')"><i class="zmdi zmdi-close"></i>
+            </span>
+        </h4>
+    </div>
+<div class="modal-body animated">
+    <div class="row p-t-20"> 
+        <div class="form-group col-sm-12" ng-class="{ 'has-error': !cargaInicialForm.porcentajeRetraso.$valid && cargaInicialForm.porcentajeRetraso.$touched || cargaInicialForm.$submitted && !cargaInicialForm.porcentajeRetraso.$valid }">
+                <label class="f-500 c-black m-b-15">Porcentaje de retraso de pago <span class="c-red">*</span></label> <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-title="Retraso de pago:" popover="La herramienta Easy dance  te brinda la oportunidad de agregar un  porcentaje de retraso de pago debido al posible pago tardío de tus alumnos con la academia, de manera que, debes incluir tanto el porcentaje asignado del retraso de pago  como el tiempo de tolerancia que le ofreces al alumno." popover-trigger="mouseenter" title="Ayuda de Easy Dance" ></i>
+                <div class="fg-line">
+                    <input type="text" class="form-control input-sm" name="porcentajeRetraso" ng-model="cargaInicial.porcentajeRetraso" ng-required="true" maxlength="2" />
+                </div>
+            <span ng-show="cargaInicialForm.$submitted || cargaInicialForm.porcentajeRetraso.$touched">
+               <small class="help-block error-span" ng-show="cargaInicialForm.porcentajeRetraso.$error.required">El porcentaje de retraso es requerido.</small>   
+            </span>
+         </div>
+        <div class="clearfix"></div>    
+    </div>       
+</div>
+<div class="modal-footer">    
+    <button type="submit" class="btn btn-primary btn-sm waves-effect waves-effect">Agregar</button>
+    <button type="button" ng-click="$dismiss('cancel')"
+      class="btn btn-default btn-sm waves-effect waves-effect">Cancelar
+    </button>
+    
+</div>
+
+</script>
+
+<script type="text/ng-template" id="myModalCargaImpuesto.html">
+<div class="modal-header bgm-morado-popup">
+        <h4 class="modal-title">
+            <i class="zmdi flaticon-ca-porcentaje-de-impuetos ico-25"></i> Carga Inicial
+            <span style="top:14px;" class="pull-right modalClose" ng-click="$dismiss('cancel')"><i class="zmdi zmdi-close"></i>
+            </span>
+        </h4>
+    </div>
+<div class="modal-body animated">
+    <div class="row p-t-20"> 
+        <div class="form-group col-sm-12" ng-class="{ 'has-error': !cargaInicialForm.impuesto.$valid && cargaInicialForm.impuesto.$touched || cargaInicialForm.$submitted && !cargaInicialForm.impuesto.$valid }">
+                <label class="f-500 c-black m-b-15">Porcentaje de Impuesto <span class="c-red">*</span></label> <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-title="Impuesto:" popover="La herramienta Easy dance  te brinda la oportunidad de agregar un  porcentaje de Impuesto util para hacer cargar el impuesto en la factuacion." popover-trigger="mouseenter" title="Ayuda de Easy Dance" ></i>
+                <div class="fg-line">
+                    <input type="text" class="form-control input-sm" name="impuesto" ng-model="cargaInicial.impuesto" ng-pattern="/^[0-9]+([.][0-9]+)?$/" maxlength="2" ng-required="true" />
+                </div>
+                <span ng-show="cargaInicialForm.$submitted || cargaInicialForm.impuesto.$touched">
+                   <small class="help-block error-span" ng-show="cargaInicialForm.impuesto.$error.required">El Impuesto es requerido.</small> <small class="help-block error-span" ng-show="cursoForm.impuestoCurso.$error.pattern">El porcentaje debe ser numero. Seleccione el punto como decimal</small>  
+               </span>
+            </div>
+        <div class="clearfix"></div>    
+    </div>       
+</div>
+<div class="modal-footer">    
+    <button type="submit" class="btn btn-primary btn-sm waves-effect waves-effect">Agregar</button>
+    <button type="button" ng-click="$dismiss('cancel')"
+      class="btn btn-default btn-sm waves-effect waves-effect">Cancelar
+    </button>
+    
+</div>
+
+</script>
+
+<script type="text/ng-template" id="myModalCargaTolerancia.html">
+<div class="modal-header bgm-morado-popup">
+        <h4 class="modal-title">
+            <i class="zmdi flaticon-ca-tiempo-de-tolerancia f-15"></i> Carga Inicial
+            <span style="top:14px;" class="pull-right modalClose" ng-click="$dismiss('cancel')"><i class="zmdi zmdi-close"></i>
+            </span>
+        </h4>
+    </div>
+<div class="modal-body animated">
+    <div class="row p-t-20"> 
+        <div class="form-group col-sm-12" ng-class="{ 'has-error': !cargaInicialForm.tiempoTolerancia.$valid && cargaInicialForm.tiempoTolerancia.$touched || cargaInicialForm.$submitted && !cargaInicialForm.tiempoTolerancia.$valid }">
+                        <label for="tiempoTolerancia" class="f-500 c-black m-b-15 ">Tiempo de tolerancia <span class="c-red">*</span> </label> <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-title="Tiempo de tolerancia:" popover="El tiempo de tolerancia es aquel que otorgas a tus alumnos, en caso de presentar atrasos en sus pagos, de esta forma, le indicas a Easy Dance cuantos días de tolerancia, ofreces para gestionar las facturas por pagar." popover-trigger="mouseenter" title="Ayuda de Easy Dance" ></i>
+                        <div class="fg-line">
+                          <input type="text" class="form-control input-sm" name="tiempoTolerancia" ng-model="cargaInicial.tiempoTolerancia" maxlength="2" ng-required="true" placeholder="Ej: 5" />
+                        </div>
+                        <span ng-show="cargaInicialForm.$submitted || cargaInicialForm.tiempoTolerancia.$touched">
+                          <small class="help-block error-span" ng-show="cargaInicialForm.tiempoTolerancia.$error.required">El tiempo de tolerancia es requerido.</small>   
+                        </span>
+            </div>
+        <div class="clearfix"></div>    
+    </div>       
+</div>
+<div class="modal-footer">    
+    <button type="submit" class="btn btn-primary btn-sm waves-effect waves-effect">Agregar</button>
+    <button type="button" ng-click="$dismiss('cancel')"
+      class="btn btn-default btn-sm waves-effect waves-effect">Cancelar
+    </button>
+    
+</div>
+
+</script>
+
+<script type="text/ng-template" id="myModalCargaFactura.html">
+<div class="modal-header bgm-morado-popup">
+        <h4 class="modal-title">
+            <i class="zmdi flaticon-ca-proxima-factura ico-25"></i> Carga Inicial
+            <span style="top:14px;" class="pull-right modalClose" ng-click="$dismiss('cancel')"><i class="zmdi zmdi-close"></i>
+            </span>
+        </h4>
+    </div>
+<div class="modal-body animated">
+    <div class="row p-t-20"> 
+        <div class="form-group col-sm-12" ng-class="{ 'has-error': !cargaInicialForm.proximoNroFactura.$valid && cargaInicialForm.proximoNroFactura.$touched || cargaInicialForm.$submitted && !cargaInicialForm.proximoNroFactura.$valid }">
+                        <label for="estatuAusenciaCargaIncial" class="f-500 c-black m-b-15 ">Próximo número de factura <span class="c-red">*</span></label> <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-title="Próximo número de factura:" popover="En caso que estés facturando en tu academia y deseas continuar con la numeración  sólo debes indicarle a Easy Dance,  cuál será el siguiente número y de esa forma  no perderás la consecutividad, también te damos la oportunidad de iniciar desde cero (0)." popover-trigger="mouseenter" title="Ayuda de Easy Dance" ></i>
+                        <div class="fg-line">
+                          <input type="text" class="form-control input-sm" name="proximoNroFactura" placeholder="Ej: 1" ng-model="cargaInicial.proximoNroFactura" maxlength="5" ng-required="true" />
+                        </div>
+                        <span ng-show="cargaInicialForm.$submitted || cargaInicialForm.proximoNroFactura.$touched">
+                          <small class="help-block error-span" ng-show="cargaInicialForm.proximoNroFactura.$error.required">El próximo número de factura es requerido.</small>   
+                        </span>
+            </div>
+        <div class="clearfix"></div>    
+    </div>       
+</div>
+<div class="modal-footer">    
+    <button type="submit" class="btn btn-primary btn-sm waves-effect waves-effect">Agregar</button>
+    <button type="button" ng-click="$dismiss('cancel')"
+      class="btn btn-default btn-sm waves-effect waves-effect">Cancelar
+    </button>
+    
+</div>
+
+</script>
+
+<script type="text/ng-template" id="myModalCargaLogotipo.html">
+<div class="modal-header bgm-morado-popup">
+        <h4 class="modal-title">
+            <i class="zmdi flaticon-ca-logotipo ico-25"></i> Carga Inicial
+            <span style="top:14px;" class="pull-right modalClose" ng-click="$dismiss('cancel')"><i class="zmdi zmdi-close"></i>
+            </span>
+        </h4>
+    </div>
+<div class="modal-body animated">
+    <div class="row p-t-20"> 
+        <div class="form-group col-sm-12" ng-class="{ 'has-error': !cargaInicialForm.logotipoAcademia.$valid && cargaInicialForm.logotipoAcademia.$touched || cargaInicialForm.$submitted && !cargaInicialForm.logotipoAcademia.$valid }">
+                        <label class="f-500 c-black m-b-15">Logotipo </label> <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-title="Logotipo:" popover="Soporta  formatos en: JPEG, JPG y PNG. El tamaño de la imagen debe ser menor o igual a 1 MB. NOTA: Logos grande de 230 x 120 píxeles se reducirán" popover-trigger="mouseenter" title="Ayuda de Easy Dance" ></i>
+                        <br>
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <span class="btn btn-primary btn-file">
+                                <span class="fileinput-new">Seleccionar imagen</span>
+                                <span class="fileinput-exists">Cambiar</span>
+                                <input type="file" name="logotipoAcademia" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="1MB" ng-model="cargaInicial.photoAcademy" ngf-select>
+                            </span>
+                            <span class="fileinput-filename"></span>
+                            <a class="close fileinput-exists" id="closePhoto" data-dismiss="fileinput">&times;</a>
+                        </div>
+            <span ng-show="cargaInicialForm.$submitted || cargaInicialForm.logotipoAcademia.$touched">
+                <small class="help-block error-span" ng-show="cargaInicialForm.logotipoAcademia.$error.maxSize">El tamaño de la imagen debe ser menor/igual a 1MB.</small>    
+            </span>
+                    </div>
+        <div class="clearfix"></div>    
+    </div>       
+</div>
+<div class="modal-footer">    
+    <button type="submit" class="btn btn-primary btn-sm waves-effect waves-effect">Agregar</button>
+    <button type="button" ng-click="$dismiss('cancel')"
+      class="btn btn-default btn-sm waves-effect waves-effect">Cancelar
+    </button>
+    
+</div>
+
+</script>
+
+<script type="text/ng-template" id="myModalCargaNormativa.html">
+<div class="modal-header bgm-morado-popup">
+        <h4 class="modal-title">
+            <i class="zmdi flaticon-ca-normativas ico-25"></i> Carga Inicial
+            <span style="top:14px;" class="pull-right modalClose" ng-click="$dismiss('cancel')"><i class="zmdi zmdi-close"></i>
+            </span>
+        </h4>
+    </div>
+<div class="modal-body animated">
+    <div class="row p-t-20"> 
+         <div class="form-group col-sm-12" ng-class="{ 'has-error': !cargaInicialForm.academyRules.$valid && cargaInicialForm.academyRules.$touched || cargaInicialForm.$submitted && !cargaInicialForm.academyRules.$valid }">
+            <label for="pdfNormativasCargaIncial" class="f-500 c-black m-b-15">Normativas de la academia </label> <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-title="Normativas de la academia: " popover="Desde esta función tendrás la oportunidad de subir un documento en formato PDF, con las normativas, reglamentos o leyes de privacidad de tu academia, de esa forma tus alumnos al ingresar a la plataforma, tendrán a la mano dicha información de manera directa. Tamaño de peso máximo 1MB." popover-trigger="mouseenter" title="Ayuda de Easy Dance" ></i>
+            <br>
+            <div class="fileinput fileinput-new" data-provides="fileinput">
+              <span class="btn btn-primary btn-file">
+                <span class="fileinput-new">Seleccionar pdf</span>
+                <span class="fileinput-exists">Cambiar</span>
+                <input type="file" name="academyRules" ngf-pattern="'application/pdf'" ngf-accept="'application/pdf'" ngf-max-size="2MB" ng-model="cargaInicial.fileAcademyRules" ngf-select />
+              </span>
+              <span class="fileinput-filename"></span>
+              <a class="close fileinput-exists" id="closeRules" data-dismiss="fileinput">&times;</a>
+            </div>
+            <span ng-show="cargaInicialForm.$submitted || cargaInicialForm.academyRules.$touched">
+                <small class="help-block error-span" ng-show="cargaInicialForm.academyRules.$error.maxSize">El tamaño del archivo debe ser menor/igual a 2MB.</small>
+                <small class="help-block error-span" ng-show="cargaInicialForm.academyRules.$error.pattern">El archivo debe estar en formato pdf.</small>
+            </span>
+          </div> 
+        <div class="clearfix"></div>    
+    </div>       
+</div>
+<div class="modal-footer">    
+    <button type="submit" class="btn btn-primary btn-sm waves-effect waves-effect">Agregar</button>
+    <button type="button" ng-click="$dismiss('cancel')"
+      class="btn btn-default btn-sm waves-effect waves-effect">Cancelar
+    </button>
+    
+</div>
+
+</script>
+
+
+<script type="text/ng-template" id="myModalCargaManual.html">
+<div class="modal-header bgm-morado-popup">
+        <h4 class="modal-title">
+            <i class="zmdi flaticon-ca-manuales ico-25"></i> Carga Inicial
+            <span style="top:14px;" class="pull-right modalClose" ng-click="$dismiss('cancel')"><i class="zmdi zmdi-close"></i>
+            </span>
+        </h4>
+    </div>
+<div class="modal-body animated">
+    <div class="row p-t-20"> 
+         <div class="form-group col-sm-12" ng-class="{ 'has-error': !cargaInicialForm.academyProcedures.$valid && cargaInicialForm.academyProcedures.$touched || cargaInicialForm.$submitted && !cargaInicialForm.academyProcedures.$valid }">
+            <label for="pdfProcedimientoCargaIncial" class="f-500 c-black m-b-15">Manual de Procedimiento </label> <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-title="Manual de Procedimiento: " popover="Desde esta función tendrás la oportunidad de subir un documento en formato PDF, con el manual de procedimientos, de esa forma tus instructores al ingresar a la plataforma, tendrán a la mano dicha información de manera directa. Limite de peso máximo 1Mb." popover-trigger="mouseenter" title="Ayuda de Easy Dance" ></i>
+            <br>
+            <div class="fileinput fileinput-new" data-provides="fileinput">
+              <span class="btn btn-primary btn-file">
+                <span class="fileinput-new">Seleccionar pdf</span>
+                <span class="fileinput-exists">Cambiar</span>
+                <input type="file" name="academyProcedures" ngf-pattern="'application/pdf'" ngf-accept="'application/pdf'" ngf-max-size="2MB" ng-model="cargaInicial.fileAcademyProcedures" ngf-select />
+              </span>
+              <span class="fileinput-filename"></span>
+              <a class="close fileinput-exists" id="closeProcedures" data-dismiss="fileinput">&times;</a>
+            </div>
+            <span ng-show="cargaInicialForm.$submitted || cargaInicialForm.academyProcedures.$touched">
+                <small class="help-block error-span" ng-show="cargaInicialForm.academyProcedures.$error.maxSize">El tamaño del archivo debe ser menor/igual a 2MB.</small>
+                <small class="help-block error-span" ng-show="cargaInicialForm.academyProcedures.$error.pattern">El archivo debe estar en formato pdf.</small>
+            </span>
+          </div>
+        <div class="clearfix"></div>    
+    </div>       
+</div>
+<div class="modal-footer">    
+    <button type="submit" class="btn btn-primary btn-sm waves-effect waves-effect">Agregar</button>
+    <button type="button" ng-click="$dismiss('cancel')"
+      class="btn btn-default btn-sm waves-effect waves-effect">Cancelar
+    </button>
+    
+</div>
+
+</script>
+
+<script type="text/ng-template" id="myModalCargaMoneda.html">
+<div class="modal-header bgm-morado-popup">
+        <h4 class="modal-title">
+            <i class="zmdi flaticon-ca-moneda ico-25"></i> Carga Inicial
+            <span style="top:14px;" class="pull-right modalClose" ng-click="$dismiss('cancel')"><i class="zmdi zmdi-close"></i>
+            </span>
+        </h4>
+    </div>
+<div class="modal-body animated">
+    <div class="row p-t-20"> 
+         <div class="form-group col-sm-12" ng-class="{ 'has-error': !cargaInicialForm.tipoMonedaAcademia.$valid && cargaInicialForm.tipoMonedaAcademia.$touched || cargaInicialForm.$submitted && !cargaInicialForm.tipoMonedaAcademia.$valid }">
+              <label for="moneda" class="f-500 c-black m-b-15 ">Moneda <span class="c-red">*</span> </label> <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-trigger="mouseenter" popover-title="Moneda:" popover="Selecciona la moneda correspondiente a tu país." title="Ayuda de Easy Dance" ></i></label>
+              <div class="fg-line">
+                  <div class="select">
+                      <select class="form-control" ng-required="true" name="tipoMonedaAcademia" ng-model="cargaInicial.tipoMoneda">
+                          <option value="">- Seleccione -</option>
+                          <option value="Bolivar">Bolivar</option>
+                          <option value="Dolar">Dólar</option>
+                          <option value="Euro">Euro</option>
+                          <option value="Peso Argentino">Peso Argentino</option>
+                          <option value="Peso Colombiano">Peso Colombiano</option>                            
+                      </select>
+                  </div>
+              </div>
+              <span ng-show="cargaInicialForm.$submitted || cargaInicialForm.tipoMonedaAcademia.$touched">
+                <small class="help-block error-span" ng-show="cargaInicialForm.tipoMonedaAcademia.$error.required">La moneda es requerida.</small>    
+            </span>
+          </div>
+        <div class="clearfix"></div>    
+    </div>       
+</div>
+<div class="modal-footer">    
+    <button type="submit" class="btn btn-primary btn-sm waves-effect waves-effect">Agregar</button>
+    <button type="button" ng-click="$dismiss('cancel')"
+      class="btn btn-default btn-sm waves-effect waves-effect">Cancelar
+    </button>
+    
+</div>
+
+</script>
+
+<script type="text/ng-template" id="myModalCargaDescripcion.html">
+<div class="modal-header bgm-morado-popup">
+        <h4 class="modal-title">
+            <i class="zmdi flaticon-ca-descripcion ico-25"></i> Carga Inicial
+            <span style="top:14px;" class="pull-right modalClose" ng-click="$dismiss('cancel')"><i class="zmdi zmdi-close"></i>
+            </span>
+        </h4>
+    </div>
+<div class="modal-body animated">
+    <div class="row p-t-20"> 
+         <div class="form-group fg-line col-sm-12">
+              <label for="descripcionCargaIncial" class="f-500 c-black m-b-15 ">Descripción de la Academia <span class="c-red">*</span> </label> <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-title="Descripción de la academia: " popover="Agrega hasta 500 caracteres, te recomendamos cuidar la ortografía y redacción debido a que esta información será visualizada por tus alumnos." title="Ayuda de Easy Dance" popover-trigger="mouseenter" ></i>
+              <div class="form-group">
+                <div class="fg-line">
+                  <textarea class="form-control" id="descripcionCargaIncial" rows="5" placeholder="Descripción de la academia" ng-model="cargaInicial.descripcion" ng-trim="false" maxlength="500"></textarea>                
+                </div><small class="pull-right"> {{500 - cargaInicial.descripcion.length}} caracteres restantes</small>
+              </div>
+          </div> 
+        <div class="clearfix"></div>    
+    </div>       
+</div>
+<div class="modal-footer">    
+    <button type="submit" class="btn btn-primary btn-sm waves-effect waves-effect">Agregar</button>
+    <button type="button" ng-click="$dismiss('cancel')"
+      class="btn btn-default btn-sm waves-effect waves-effect">Cancelar
+    </button>
+    
+</div>
+
+</script>
+
+
+<script type="text/ng-template" id="myModalCargaRedes.html">
+<div class="modal-header bgm-morado-popup">
+        <h4 class="modal-title">
+            <i class="zmdi flaticon-ca-redes ico-25"></i> Carga Inicial
+            <span style="top:14px;" class="pull-right modalClose" ng-click="$dismiss('cancel')"><i class="zmdi zmdi-close"></i>
+            </span>
+        </h4>
+    </div>
+<div class="modal-body animated">
+    <div class="row p-t-20"> 
+         
+        <div class="clearfix"></div>    
+    </div>       
+</div>
+<div class="modal-footer">    
+    <button type="submit" class="btn btn-primary btn-sm waves-effect waves-effect">Agregar</button>
+    <button type="button" ng-click="$dismiss('cancel')"
+      class="btn btn-default btn-sm waves-effect waves-effect">Cancelar
+    </button>
+    
+</div>
+
+</script>
+
+
+
+
+<div class="container">
+    <div class="block-header">
+        <h4><i class="zmdi zmdi-info p-r-5"></i> Información <span class="breadcrumb-ico m-t-10 p-l-5 p-r-5"> <i class="zmdi zmdi-caret-right"></i> </span> <span class="active-state">Planilla Carga Inicial </span></h4>
+    </div>
+    <div clasa="row">            
+           
+<div class="col-sm-offset-1 col-sm-10">
+    <div class="card">
+        <!--<div class="card-header">
+            <h2>Buttons <small><a target="_blank" class="c-gray" href="http://angular-ui.github.io/bootstrap/#/buttons">ui.bootstrap.buttons</a></small></h2>
+        </div>-->
+ 
+        <div class="card-body card-padding p-t-30 p-b-20 ng-scope" >
+           <div class="row">
+            
+            <div class="col-sm-12 detalle" ng-click="editID()"  >  
+                <span class="ico-derecha"><i class="zmdi zmdi-edit f-22"></i></span>          
+                <div class="col-sm-4 p-t-10">
+                   <span class="m-l-10 m-r-10"> <i class="flaticon-ca-identidad f-22"></i> </span>
+                   <span class="f-16"> Identidad fiscal </span> 
+                </div> 
+                <div class="col-sm-8">
+                 <p class="p-t-10 f-15" ng-model="alumno.identificador">{{instructor.identificador}}</p>
+                </div>             
+                <div class="col-xs-12">
+                <hr>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="col-sm-12 detalle" ng-click="editRetraso()" > 
+                <span class="ico-derecha" ><i class="zmdi zmdi-edit f-22"></i></span>
+            <div class="col-sm-4 p-t-10">
+
+              <span class="m-l-10 m-r-10"> <i class="flaticon-ca-porcentaje-de-retraso f-20"></i> </span>
+              <span class="f-16"> Porcentaje de retraso de pago </span> 
+            </div> 
+            <div class="col-sm-8">
+            <p class="p-t-10 f-15" ng-model="">{{instructor.nombre | uppercase}} {{instructor.apellido | uppercase}}</p>
+            </div> 
+
+            <div class="col-xs-12">
+            <hr>
+            </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="col-sm-12 detalle" ng-click="editImpuesto()" > 
+                <span class="ico-derecha" ><i class="zmdi zmdi-edit f-22"></i></span>
+            <div class="col-sm-4 p-t-10">
+              <span class="m-l-10 m-r-10"> <i class="flaticon-ca-porcentaje-de-impuetos f-23"></i> </span>
+              <span class="f-16"> Porcentaje de Impuesto  </span>                 
+            </div> 
+            <div class="col-sm-8">
+            <p class="p-t-10 f-15" ng-model="">{{instructor.fecha_nacimiento | date}}</p>
+            </div> 
+
+            <div class="col-xs-12">
+            <hr>
+            </div>
+
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="col-sm-12 detalle" ng-click="editTolerancia()" > 
+                <span class="ico-derecha" ><i class="zmdi zmdi-edit f-22"></i></span>
+
+            <div class="col-sm-4 p-t-10">
+              <span class="m-l-10 m-r-10"> <i class="flaticon-ca-tiempo-de-tolerancia f-22"></i> </span>
+              <span class="f-16"> Tiempo de tolerancia </span>   
+            </div> 
+            <div class="col-sm-8">
+            <p class="p-t-10 f-15" ng-model="">{{instructor.genero | uppercase}}</p>
+            </div> 
+
+            <div class="col-xs-12">
+            <hr>
+            </div>
+
+            </div>
+                        
+            <div class="clearfix"></div>
+             <div class="col-sm-12 detalle" ng-click="editFactura()" > 
+                <span class="ico-derecha" ><i class="zmdi zmdi-edit f-22"></i></span>
+
+            <div class="col-sm-4 p-t-10">
+              <span class="m-l-10 m-r-10"> <i class="flaticon-ca-proxima-factura f-22"></i> </span>
+              <span class="f-16"> Próximo número de factura </span>   
+            </div> 
+            <div class="col-sm-8">
+
+            </div> 
+
+            <div class="col-xs-12">
+            <hr>
+            </div>
+
+            </div>
+
+
+            <div class="clearfix"></div>
+             <div class="col-sm-12 detalle" ng-click="editNormativa()" > 
+                <span class="ico-derecha" ><i class="zmdi zmdi-edit f-22"></i></span>
+
+            <div class="col-sm-4 p-t-10">
+              <span class="m-l-10 m-r-10"> <i class="flaticon-ca-normativas f-22"></i> </span>
+              <span class="f-16"> Normativas de la academia  </span>   
+            </div> 
+            <div class="col-sm-8">
+            <p class="p-t-10 f-15" ng-model="">{{instructor.email}}</p>
+            </div> 
+
+            <div class="col-xs-12">
+            <hr>
+            </div>
+
+            </div>
+
+
+            <div class="clearfix"></div>
+             <div class="col-sm-12 detalle" ng-click="editManual()" > 
+                <span class="ico-derecha" ><i class="zmdi zmdi-edit f-22"></i></span>
+
+            <div class="col-sm-4 p-t-10">
+              <span class="m-l-10 m-r-10"> <i class="flaticon-ca-manuales f-22"></i> </span>
+              <span class="f-16"> Manual de Procedimiento </span>   
+            </div> 
+            <div class="col-sm-8">
+            <p class="p-t-10 f-15" ng-model="">{{instructor.email}}</p>
+            </div> 
+
+            <div class="col-xs-12">
+            <hr>
+            </div>
+
+            </div>
+
+
+            <div class="clearfix"></div>
+             <div class="col-sm-12 detalle" ng-click="editMoneda()" > 
+                <span class="ico-derecha" ><i class="zmdi zmdi-edit f-22"></i></span>
+
+            <div class="col-sm-4 p-t-10">
+              <span class="m-l-10 m-r-10"> <i class="flaticon-ca-moneda f-22"></i> </span>
+              <span class="f-16"> Moneda </span>   
+            </div> 
+            <div class="col-sm-8">
+            <p class="p-t-10 f-15" ng-model="">{{instructor.email}}</p>
+            </div> 
+
+            <div class="col-xs-12">
+            <hr>
+            </div>
+
+            </div>
+
+
+            <div class="clearfix"></div>
+             <div class="col-sm-12 detalle" ng-click="editDescripcion()" > 
+                <span class="ico-derecha" ><i class="zmdi zmdi-edit f-22"></i></span>
+
+            <div class="col-sm-4 p-t-10">
+              <span class="m-l-10 m-r-10"> <i class="flaticon-ca-descripcion f-22"></i> </span>
+              <span class="f-16"> Descripción de la Academia </span>   
+            </div> 
+            <div class="col-sm-8">
+            <p class="p-t-10 f-15" ng-model="">{{instructor.email}}</p>
+            </div> 
+
+            <div class="col-xs-12">
+            <hr>
+            </div>
+
+            </div>
+
+
+            <div class="clearfix"></div>
+             <div class="col-sm-12 detalle" ng-click="editLogotipo()" > 
+                <span class="ico-derecha" ><i class="zmdi zmdi-edit f-22"></i></span>
+
+            <div class="col-sm-4 p-t-10">
+              <span class="m-l-10 m-r-10"> <i class="flaticon-ca-logotipo f-22"></i> </span>
+              <span class="f-16"> Logotipo </span>   
+            </div> 
+            <div class="col-sm-8">
+            <p class="p-t-10 f-15" ng-model="">{{instructor.email}}</p>
+            </div> 
+
+            <div class="col-xs-12">
+            <hr>
+            </div>
+
+            </div>
+
+
+            <div class="clearfix"></div>
+             <div class="col-sm-12 detalle" ng-click="editRedes()" > 
+                <span class="ico-derecha" ><i class="zmdi zmdi-edit f-22"></i></span>
+
+            <div class="col-sm-4 p-t-10">
+              <span class="m-l-10 m-r-10"> <i class="flaticon-ca-redes f-22"></i> </span>
+              <span class="f-16"> Redes Sociales </span>   
+            </div> 
+            <div class="col-sm-8">
+            <p class="p-t-10 f-15" ng-model="">{{instructor.email}}</p>
+            </div> 
+
+            <div class="col-xs-12">
+            <hr>
+            </div>
+
+            </div>
+
+
+            </div>
+
+                    
+
+           </div>
+        </div>
+
+                
+        </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+   $("html, body").animate({ scrollTop: 0},0, "linear", function() {});
+  
+</script>
+

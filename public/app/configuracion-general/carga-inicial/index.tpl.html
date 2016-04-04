@@ -1,0 +1,203 @@
+<script type="text/ng-template" id="myModalCargarLogotipo.html">
+<div class="modal-header bgm-morado-popup">
+        <h4 class="modal-title">
+            <i class="zmdi zmdi-image ico-25"></i> Selecciona el Logotipo  
+            <span style="top:14px;" class="pull-right modalClose" ng-click="$dismiss('cancel')"><i class="zmdi zmdi-close"></i>
+            </span>
+        </h4>
+    </div>
+<div class="modal-body animated">
+    <div class="row p-t-20 m-t-20">
+    <p class="p-l-10 f-20 gris-claro">Logo de la academia</p>
+    <p class="text-center p-t-30 " ng-click="secondLinkClick()" >
+       
+       <i class="zmdi zmdi-image f-150 gris-claro" ></i>
+       <p class="text-center f-30 gris-claro"> Arrastra el logotipo aquí </p>
+       <p class="text-center m-b-30"><a class="btn btn-default active">Seleccionar imagen</a></p>
+    </p>
+
+    <div>
+        <div ng-show="" class="fileinput fileinput-new text-center"  data-provides="fileinput">
+              <span class="btn btn-default active btn-file" >
+                <span class="fileinput-new" id="myselector" >Seleccionar imagen</span>
+                <span class="fileinput-exists">Cambiar</span>
+                <input type="file" name="logotipoAcademia" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="1MB" ng-model="cargaInicial.photoAcademy" ngf-select>
+              </span>
+              <span class="fileinput-filename"></span>
+              <a class="close fileinput-exists" id="closePhoto" data-dismiss="fileinput">&times;</a>
+            </div>
+      </div>   
+        <div class="clearfix"></div>    
+    </div>       
+</div>
+<div class="modal-footer m-t-30">   
+
+    <hr> 
+    <span class="pull-left">El logotipo se muestra a todos los alumnos e instructores de tu academia </span> 
+    <button type="submit" class="btn btn-primary btn-sm waves-effect waves-effect">Enviar</button>
+    <button type="button" ng-click="$dismiss('cancel')"
+      class="btn btn-default btn-sm waves-effect waves-effect">Cancelar
+    </button>
+    
+</div>
+
+</script>
+
+<div class="container">
+    <div class="block-header">
+        <h2>Carga Inicial</h2>
+
+    </div>
+    
+    <!-- TABS -->
+    <div class="card">
+        <div class="card-body card-padding p-b-30">
+            <form name="cargaInicialForm" ng-submit="save()" role="form" novalidate>
+                <div class="card-body">
+                <div class="row p-r-15 p-l-15 p-b-10 p-t-30">
+                   <div class="form-group col-sm-4" ng-class="{ 'has-error': !cargaInicialForm.identidadFiscal.$valid && cargaInicialForm.identidadFiscal.$touched || cargaInicialForm.$submitted && !cargaInicialForm.identidadFiscal.$valid }">
+                        <label class="f-500 c-black m-b-15 ">Identidad fiscal <span class="c-red">*</span></label> <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-title="Número de identificación  fiscal:" popover="Indique el número de identidad de la empresa, en caso de no poseerlo, ingrese su número de identidad personal, los datos deben estar bien suministrado, debido a que estos se reflejaran en la factura o recibo de pago." title="Ayuda de Easy Dance" popover-trigger="mouseenter" ></i>
+                        <div class="fg-line">
+                          <input type="text" class="form-control input-sm" name="identidadFiscal" placeholder="Ej: J-29672828-9" ng-model="cargaInicial.identidadFiscal" ng-required="true" maxlength="20" />
+                        </div>
+                        <span ng-show="cargaInicialForm.$submitted || cargaInicialForm.identidadFiscal.$touched">
+                          <small class="help-block error-span" ng-show="cargaInicialForm.identidadFiscal.$error.required">El número de identidad fiscal es requerido.</small>   
+                        </span>
+                   </div>
+                   <div class="form-group col-sm-4" ng-class="{ 'has-error': !cargaInicialForm.porcentajeRetraso.$valid && cargaInicialForm.porcentajeRetraso.$touched || cargaInicialForm.$submitted && !cargaInicialForm.porcentajeRetraso.$valid }">
+                        <label class="f-500 c-black m-b-15">Porcentaje de retraso de pago <span class="c-red">*</span></label> <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-title="Retraso de pago:" popover="La herramienta Easy dance  te brinda la oportunidad de agregar un  porcentaje de retraso de pago debido al posible pago tardío de tus alumnos con la academia, de manera que, debes incluir tanto el porcentaje asignado del retraso de pago  como el tiempo de tolerancia que le ofreces al alumno." popover-trigger="mouseenter" title="Ayuda de Easy Dance" ></i>
+                        <div class="fg-line">
+                          <input type="text" class="form-control input-sm" name="porcentajeRetraso" ng-model="cargaInicial.porcentajeRetraso" ng-required="true" maxlength="2" />
+                        </div>
+                        <span ng-show="cargaInicialForm.$submitted || cargaInicialForm.porcentajeRetraso.$touched">
+                          <small class="help-block error-span" ng-show="cargaInicialForm.porcentajeRetraso.$error.required">El porcentaje de retraso es requerido.</small>   
+                        </span>
+                   </div>
+                   
+                   <div class="form-group col-sm-4" ng-class="{ 'has-error': !cargaInicialForm.impuesto.$valid && cargaInicialForm.impuesto.$touched || cargaInicialForm.$submitted && !cargaInicialForm.impuesto.$valid }">
+                        <label class="f-500 c-black m-b-15">Porcentaje de Impuesto <span class="c-red">*</span></label> <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-title="Impuesto:" popover="La herramienta Easy dance  te brinda la oportunidad de agregar un  porcentaje de Impuesto util para hacer cargar el impuesto en la factuacion." popover-trigger="mouseenter" title="Ayuda de Easy Dance" ></i>
+                        <div class="fg-line">
+                          <input type="text" class="form-control input-sm" name="impuesto" ng-model="cargaInicial.impuesto" ng-pattern="/^[0-9]+([.][0-9]+)?$/" maxlength="2" ng-required="true" />
+                        </div>
+                        <span ng-show="cargaInicialForm.$submitted || cargaInicialForm.impuesto.$touched">
+                          <small class="help-block error-span" ng-show="cargaInicialForm.impuesto.$error.required">El Impuesto es requerido.</small> <small class="help-block error-span" ng-show="cursoForm.impuestoCurso.$error.pattern">El porcentaje debe ser numero. Seleccione el punto como decimal</small>  
+                        </span>
+                   </div>
+
+
+                   
+                  
+                   <div class="form-group col-sm-4" ng-class="{ 'has-error': !cargaInicialForm.tiempoTolerancia.$valid && cargaInicialForm.tiempoTolerancia.$touched || cargaInicialForm.$submitted && !cargaInicialForm.tiempoTolerancia.$valid }">
+                        <label for="tiempoTolerancia" class="f-500 c-black m-b-15 ">Tiempo de tolerancia <span class="c-red">*</span> </label> <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-title="Tiempo de tolerancia:" popover="El tiempo de tolerancia es aquel que otorgas a tus alumnos, en caso de presentar atrasos en sus pagos, de esta forma, le indicas a Easy Dance cuantos días de tolerancia, ofreces para gestionar las facturas por pagar." popover-trigger="mouseenter" title="Ayuda de Easy Dance" ></i>
+                        <div class="fg-line">
+                          <input type="text" class="form-control input-sm" name="tiempoTolerancia" ng-model="cargaInicial.tiempoTolerancia" maxlength="2" ng-required="true" placeholder="Ej: 5" />
+                        </div>
+                        <span ng-show="cargaInicialForm.$submitted || cargaInicialForm.tiempoTolerancia.$touched">
+                          <small class="help-block error-span" ng-show="cargaInicialForm.tiempoTolerancia.$error.required">El tiempo de tolerancia es requerido.</small>   
+                        </span>
+                   </div>
+
+                   <div class="form-group col-sm-4" ng-class="{ 'has-error': !cargaInicialForm.proximoNroFactura.$valid && cargaInicialForm.proximoNroFactura.$touched || cargaInicialForm.$submitted && !cargaInicialForm.proximoNroFactura.$valid }">
+                        <label for="estatuAusenciaCargaIncial" class="f-500 c-black m-b-15 ">Próximo número de factura <span class="c-red">*</span></label> <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-title="Próximo número de factura:" popover="En caso que estés facturando en tu academia y deseas continuar con la numeración  sólo debes indicarle a Easy Dance,  cuál será el siguiente número y de esa forma  no perderás la consecutividad, también te damos la oportunidad de iniciar desde cero (0)." popover-trigger="mouseenter" title="Ayuda de Easy Dance" ></i>
+                        <div class="fg-line">
+                          <input type="text" class="form-control input-sm" name="proximoNroFactura" placeholder="Ej: 1" ng-model="cargaInicial.proximoNroFactura" maxlength="5" ng-required="true" />
+                        </div>
+                        <span ng-show="cargaInicialForm.$submitted || cargaInicialForm.proximoNroFactura.$touched">
+                          <small class="help-block error-span" ng-show="cargaInicialForm.proximoNroFactura.$error.required">El próximo número de factura es requerido.</small>   
+                        </span>
+                   </div>  
+				   <div class="form-group col-sm-4" ng-class="{ 'has-error': !cargaInicialForm.logotipoAcademia.$valid && cargaInicialForm.logotipoAcademia.$touched || cargaInicialForm.$submitted && !cargaInicialForm.logotipoAcademia.$valid }">
+						<label class="f-500 c-black m-b-15">Logotipo </label> <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-title="Logotipo:" popover="Soporta  formatos en: JPEG, JPG y PNG. El tamaño de la imagen debe ser menor o igual a 1 MB. NOTA: Logos grande de 230 x 120 píxeles se reducirán" popover-trigger="mouseenter" title="Ayuda de Easy Dance" ></i>
+						<br>
+            <!--<i class="zmdi zmdi-image f-35 text-danger" ng-click="cargarLogotipo()" ></i>-->
+						<div class="fileinput fileinput-new" data-provides="fileinput">
+							<span class="btn btn-primary btn-file">
+								<span class="fileinput-new">Seleccionar imagen</span>
+								<span class="fileinput-exists">Cambiar</span>
+								<input type="file" name="logotipoAcademia" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="1MB" ng-model="cargaInicial.photoAcademy" ngf-select>
+							</span>
+							<span class="fileinput-filename"></span>
+							<a class="close fileinput-exists" id="closePhoto" data-dismiss="fileinput">&times;</a>
+						</div>
+            <span ng-show="cargaInicialForm.$submitted || cargaInicialForm.logotipoAcademia.$touched">
+                <small class="help-block error-span" ng-show="cargaInicialForm.logotipoAcademia.$error.maxSize">El tamaño de la imagen debe ser menor/igual a 1MB.</small>    
+            </span>
+					</div>
+
+          <div class="clearfix"></div>
+
+          <div class="form-group col-sm-4" ng-class="{ 'has-error': !cargaInicialForm.academyRules.$valid && cargaInicialForm.academyRules.$touched || cargaInicialForm.$submitted && !cargaInicialForm.academyRules.$valid }">
+            <label for="pdfNormativasCargaIncial" class="f-500 c-black m-b-15">Normativas de la academia </label> <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-title="Normativas de la academia: " popover="Desde esta función tendrás la oportunidad de subir un documento en formato PDF, con las normativas, reglamentos o leyes de privacidad de tu academia, de esa forma tus alumnos al ingresar a la plataforma, tendrán a la mano dicha información de manera directa. Tamaño de peso máximo 1MB." popover-trigger="mouseenter" title="Ayuda de Easy Dance" ></i>
+            <br>
+            <div class="fileinput fileinput-new" data-provides="fileinput">
+              <span class="btn btn-primary btn-file">
+                <span class="fileinput-new">Seleccionar pdf</span>
+                <span class="fileinput-exists">Cambiar</span>
+                <input type="file" name="academyRules" ngf-pattern="'application/pdf'" ngf-accept="'application/pdf'" ngf-max-size="2MB" ng-model="cargaInicial.fileAcademyRules" ngf-select />
+              </span>
+              <span class="fileinput-filename"></span>
+              <a class="close fileinput-exists" id="closeRules" data-dismiss="fileinput">&times;</a>
+            </div>
+            <span ng-show="cargaInicialForm.$submitted || cargaInicialForm.academyRules.$touched">
+                <small class="help-block error-span" ng-show="cargaInicialForm.academyRules.$error.maxSize">El tamaño del archivo debe ser menor/igual a 2MB.</small>
+                <small class="help-block error-span" ng-show="cargaInicialForm.academyRules.$error.pattern">El archivo debe estar en formato pdf.</small>
+            </span>
+          </div> 
+
+          <div class="form-group col-sm-4" ng-class="{ 'has-error': !cargaInicialForm.academyProcedures.$valid && cargaInicialForm.academyProcedures.$touched || cargaInicialForm.$submitted && !cargaInicialForm.academyProcedures.$valid }">
+            <label for="pdfProcedimientoCargaIncial" class="f-500 c-black m-b-15">Manual de Procedimiento </label> <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-title="Manual de Procedimiento: " popover="Desde esta función tendrás la oportunidad de subir un documento en formato PDF, con el manual de procedimientos, de esa forma tus instructores al ingresar a la plataforma, tendrán a la mano dicha información de manera directa. Limite de peso máximo 1Mb." popover-trigger="mouseenter" title="Ayuda de Easy Dance" ></i>
+            <br>
+            <div class="fileinput fileinput-new" data-provides="fileinput">
+              <span class="btn btn-primary btn-file">
+                <span class="fileinput-new">Seleccionar pdf</span>
+                <span class="fileinput-exists">Cambiar</span>
+                <input type="file" name="academyProcedures" ngf-pattern="'application/pdf'" ngf-accept="'application/pdf'" ngf-max-size="2MB" ng-model="cargaInicial.fileAcademyProcedures" ngf-select />
+              </span>
+              <span class="fileinput-filename"></span>
+              <a class="close fileinput-exists" id="closeProcedures" data-dismiss="fileinput">&times;</a>
+            </div>
+            <span ng-show="cargaInicialForm.$submitted || cargaInicialForm.academyProcedures.$touched">
+                <small class="help-block error-span" ng-show="cargaInicialForm.academyProcedures.$error.maxSize">El tamaño del archivo debe ser menor/igual a 2MB.</small>
+                <small class="help-block error-span" ng-show="cargaInicialForm.academyProcedures.$error.pattern">El archivo debe estar en formato pdf.</small>
+            </span>
+          </div>
+
+          <div class="form-group col-sm-4" ng-class="{ 'has-error': !cargaInicialForm.tipoMonedaAcademia.$valid && cargaInicialForm.tipoMonedaAcademia.$touched || cargaInicialForm.$submitted && !cargaInicialForm.tipoMonedaAcademia.$valid }">
+              <label for="moneda" class="f-500 c-black m-b-15 ">Moneda <span class="c-red">*</span> </label> <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-trigger="mouseenter" popover-title="Moneda:" popover="Selecciona la moneda correspondiente a tu país." title="Ayuda de Easy Dance" ></i></label>
+              <div class="fg-line">
+                  <div class="select">
+                      <select class="form-control" ng-required="true" name="tipoMonedaAcademia" ng-model="cargaInicial.tipoMoneda">
+                          <option value="">- Seleccione -</option>
+                          <option value="Bolivar">Bolivar</option>
+                          <option value="Dolar">Dólar</option>
+                          <option value="Euro">Euro</option>
+                          <option value="Peso Argentino">Peso Argentino</option>
+                          <option value="Peso Colombiano">Peso Colombiano</option>                            
+                      </select>
+                  </div>
+              </div>
+              <span ng-show="cargaInicialForm.$submitted || cargaInicialForm.tipoMonedaAcademia.$touched">
+                <small class="help-block error-span" ng-show="cargaInicialForm.tipoMonedaAcademia.$error.required">La moneda es requerida.</small>    
+            </span>
+          </div>
+
+          <div class="form-group fg-line col-sm-12">
+              <label for="descripcionCargaIncial" class="f-500 c-black m-b-15 ">Descripción de la Academia <span class="c-red">*</span> </label> <i class="ico-pregunta zmdi zmdi-help" popover-placement="bottom" popover-title="Descripción de la academia: " popover="Agrega hasta 500 caracteres, te recomendamos cuidar la ortografía y redacción debido a que esta información será visualizada por tus alumnos." title="Ayuda de Easy Dance" popover-trigger="mouseenter" ></i>
+              <div class="form-group">
+                <div class="fg-line">
+                  <textarea class="form-control" id="descripcionCargaIncial" rows="5" placeholder="Descripción de la academia" ng-model="cargaInicial.descripcion" ng-trim="false" maxlength="500"></textarea>                
+                </div><small class="pull-right"> {{500 - cargaInicial.descripcion.length}} caracteres restantes</small>
+              </div>
+          </div> 
+
+                </div>
+                </div>   
+                
+                <button type="submit" class="btn btn-primary waves-effect">Guardar</button>
+                <button type="button" class="btn btn-default waves-effect">Cancelar</button>   
+                
+            </form>
+            
+            
+        </div>
+    </div>
