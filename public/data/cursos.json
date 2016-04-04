@@ -1,0 +1,20 @@
+[
+    {
+        "id": 10234,
+        "curso": "Basico I - Danza Árabe",
+        "dia": "Lunes, Miercoles",
+        "horario": "2:00 PM a 6:00 PM",
+        "nivel": "Basico",
+		"instructor": "Lorena Lopez",
+		"cantidad": "20"
+    },
+    {   
+        "id": 10233,
+		"curso": "Intermedio I - Ritmo Urbano",
+        "dia":"Martes, Jueves",
+        "horario": "1:00 PM a 3:00 PM",
+        "nivel": "Intermedio",
+		"instructor": "Maria Linero",
+		"cantidad": "15"
+    }
+]

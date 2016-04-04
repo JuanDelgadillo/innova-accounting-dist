@@ -1,0 +1,35 @@
+{  
+   "list":[
+        {  
+
+            "id":1,
+            "img": "1.jpg",
+            "user": "Mary Carmen",
+            "text": "Waooo, excelente allá estaré cuenta conmigo"
+        },
+        {
+            "id":2,
+            "img": "2.jpg",
+            "user": "Eduardo Alejandro",
+            "text": "Hola , mil gracias por la información"
+        },
+        {
+            "id":3,
+            "img": "3.jpg",
+            "user": "Tania González",
+            "text": "Lo he intentado pero no me han dado respuesta"
+        },
+        {
+            "id":4,
+            "img": "4.jpg",
+            "user": "Luis Sánchez",
+            "text": "Saludos que ha pasado con las nuevas clases"
+        },
+        {
+            "id":5,
+            "img": "5.jpg",
+            "user": "Vicky Beltrán",
+            "text": "Sería maravilloso espero poder contar con ustedes"
+        }
+   ]
+}

@@ -1,0 +1,214 @@
+/* 1 */
+{
+    "_id" : ObjectId("569f85a5be4bad7002000003"),
+    "nombre" : "Danza contemporánea",
+    "descripcion" : "La danza contemporánea surge como una reacción a las formas clásicas y probablemente como una necesidad de expresarse más libremente con el cuerpo. Es una clase de danza en la que se busca expresar, a través del bailarín , una idea, un sentimiento, una emoción, al igual que el ballet clásico, pero mezclando movimientos corporales propios del siglo XX y XXI.",
+    "__v" : 0
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("56c2283ba2bd9a1014000001"),
+    "nombre" : "Samba",
+    "descripcion" : "Es un género musical de raíces africanas surgido en Brasil, del cual deriva un tipo de danza. Es una de las principales manifestaciones de la cultura popular brasileña y un símbolo de la identidad nacional.",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("56c3aa7414c5007814000002"),
+    "nombre" : "Ballet",
+    "descripcion" : "El Ballet, también conocido como danza clásica, es una danza escénica estilizada que normalmente desarrolla un argumento.",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 4 */
+{
+    "_id" : ObjectId("56c3ac0414c5007814000003"),
+    "nombre" : "Danza contemporánea",
+    "descripcion" : "La danza contemporánea surge como una reacción a las formas clásicas y probablemente como una necesidad de expresarse más libremente con el cuerpo. Es una clase de danza en la que se busca expresar, a través del bailarín , una idea, un sentimiento, una emoción, al igual que el ballet clásico.",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 5 */
+{
+    "_id" : ObjectId("56c3ac7d14c5007814000004"),
+    "nombre" : "Danza árabe",
+    "descripcion" : "Es una danza que combina elementos tradicionales de Oriente Medio junto con otros del Norte de África. En árabe se la conoce como rakssharki رقصشرقي (\"danza del este\" o \"danza oriental\"). También es denominada en ocasiones como raksbaladi رقصبلدي (danza \"nacional\" o \"folk\"). ",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 6 */
+{
+    "_id" : ObjectId("56c3acbc14c5007814000005"),
+    "nombre" : "Flamenco",
+    "descripcion" : "Es un estilo de música y danza propio de Andalucía, Extremadura y Murcia. Sus principales facetas son el cante, el toque y elbaile, contando también con sus propias tradiciones y normas. Tal y como lo conocemos hoy en día data del siglo XVIII.",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 7 */
+{
+    "_id" : ObjectId("56c3adc514c5007814000006"),
+    "nombre" : "Ritmos urbanos",
+    "descripcion" : "El Break Dance , Breaking o Hip-Hop, es una danza urbana que forma parte de la cultura afroamericana surgida en las comunidades de los barrios neoyorquinos como Bronx y Brooklynen los 70. Si bien es cierto que alcanzaría un reconocimiento más alto en la década de los 80.",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 8 */
+{
+    "_id" : ObjectId("56c3adf614c5007814000007"),
+    "nombre" : "Salsa casino",
+    "descripcion" : "La rueda de casino nació en Cuba en la década de los 50, aproximadamente en el año de 1956. Su nombre se debe a que surgió y se bailó por primera vez en el Club Casino Deportivo de este país. ",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 9 */
+{
+    "_id" : ObjectId("56c3ae1514c5007814000008"),
+    "nombre" : "Salsa en línea",
+    "descripcion" : "La salsa en línea representa una forma y una distribución de bailar la salsa.Podemos dividir la salsa en línea en dos estilos diferentes según el tiempo musical On 1 (salsa al uno) oOn 2 (salsa al dos).",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 10 */
+{
+    "_id" : ObjectId("56c3ae4814c5007814000009"),
+    "nombre" : "Salsa caleña",
+    "descripcion" : "Cómo el nombre lo dice, este estilo viene de la ciudad colombiana de Cali, la cual es aclamada como la capital mundial de la salsa. Este estilo se reconoce por sus muy rápidos movimientos de piernas y de cadera. Estos rápidos movimientos de piernas son la razón por la qué es tan difícil.",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 11 */
+{
+    "_id" : ObjectId("56c3ae7214c500781400000a"),
+    "nombre" : "Merengue",
+    "descripcion" : "El merengue es el baile nacional de la Republica Dominicana. El merengue echó sus raíces en el campo en el siglo XIX, pero ahora su popularidad ha extendido al través de las clases sociales. Durante todo su historia, era un método para expresar opiniones sociales y políticas.",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 12 */
+{
+    "_id" : ObjectId("56c3b02d14c500781400000c"),
+    "nombre" : "Bachata",
+    "descripcion" : "Es un género musical bailable originario de la República Dominicana, dentro de lo que se denomina folclore urbano. Está considerado como un derivado del bolero rítmico, influenciado por otros estilos como el son cubano y el merengue.",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 13 */
+{
+    "_id" : ObjectId("56c3b05414c500781400000d"),
+    "nombre" : "Capoeira",
+    "descripcion" : "Es un arte marcial afro-brasileño que combina facetas de danza, música y acrobacias, así como expresión corporal. Fue desarrollado en Brasil por descendientes africanos con influencias indígenas, probablemente a principios del siglo XVI. Es conocido por sus rápidos y complejos movimientos.",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 14 */
+{
+    "_id" : ObjectId("56c3b08014c500781400000e"),
+    "nombre" : "Cumbia",
+    "descripcion" : "Género musical y danza folclórica tradicional de Colombia, resultado del sincretismo musical de indígenas y negros esclavos en la Costa Caribe durante la Conquista y la Colonia.",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 15 */
+{
+    "_id" : ObjectId("56c3b10314c500781400000f"),
+    "nombre" : "Los bailes de salón",
+    "descripcion" : "Son aquellos que baila una pareja de forma coordinada y siguiendo el ritmo de la música. En su origen eran meramente lúdicos y populares y su repercusión social fue de tal magnitud que dio lugar a la creación de salas que dotadas de una orquesta y un pavimento adecuado facilitaran su práctica.",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 16 */
+{
+    "_id" : ObjectId("56c3b14314c5007814000010"),
+    "nombre" : "Danza folklórica",
+    "descripcion" : "El término \"danza folclórica\" a veces se aplica a determinadas danzas de importancia histórica en la cultura y la historia europea; normalmente se originó antes de siglo XXI. Para otras culturas los términos \"la danza étnica\" y/o \"danza tradicional\".",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 17 */
+{
+    "_id" : ObjectId("56c3b16814c5007814000011"),
+    "nombre" : "Jazz",
+    "descripcion" : "El jazz es una forma de arte musical que se originó en los Estados Unidos mediante la confrontación de los negros con la música europea. La instrumentación, melodía y armonía del jazz se derivan principalmente de la tradición musical de Occidente.",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 18 */
+{
+    "_id" : ObjectId("56c3b19714c5007814000012"),
+    "nombre" : "Bolero",
+    "descripcion" : "El género es identificable por algunos elementos rítmicos y nuevas formas de composición que aparecieron en el quehacer musical en la isla de Cuba durante el siglo XIX. Aunque comparte el nombre con el bolero español, que es una danza que surgió en siglo XVIII .",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 19 */
+{
+    "_id" : ObjectId("56c3b1c614c5007814000013"),
+    "nombre" : "Tango",
+    "descripcion" : "Es un género musical y una danza, característica de la región del Río de la Plata y su zona de influencia, principalmente de las ciudades de Buenos Aires (en Argentina) y Montevideo (en Uruguay).",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 20 */
+{
+    "_id" : ObjectId("56c3b1ec14c5007814000014"),
+    "nombre" : "Danzas nacionalista",
+    "descripcion" : "Nace de la necesidad de obtener un patrón y una calidad estética que permitan adaptar las danzas populares o folklóricas venezolanas a las exigencias de la escena. Su propósito inmediato fue, pues, la creación de una danza teatral venezolana de aceptación y validez internacional.",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 21 */
+{
+    "_id" : ObjectId("56c3b22414c5007814000015"),
+    "nombre" : "Twerking",
+    "descripcion" : "El perreo es un estilo de baile. En los Estados Unidos se lo conoce también como grinding, twerking, sinónimos también de freak dancing o bootydancing. Puede ser rápido y agresivo o lento.",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 22 */
+{
+    "_id" : ObjectId("56c3b25314c5007814000016"),
+    "nombre" : "Kizomba",
+    "descripcion" : "Es un género musical y un baile que comenzó a componerse entre finales de los años 70 principios de los años 80 en Angola. La kizomba es un género musical de origen angoleño, una ex-colonia portuguesa.",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 23 */
+{
+    "_id" : ObjectId("56c3b27114c5007814000017"),
+    "nombre" : "Ritmos tradicionales de cuba",
+    "descripcion" : "Entre los ritmos tradicionales del país están Danzón, El son, el mambo, la rumba, el changui, entre otros.",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}
+
+/* 24 */
+{
+    "_id" : ObjectId("56c3b28f14c5007814000018"),
+    "nombre" : "Ritmos Afrocubanos",
+    "descripcion" : "Esta categoría reúne a personas naturales  de Cuba pertenecientes a la etnia afroamericana (ya sea por línea paterna y/o materna) originarios de África.",
+    "academia_id" : "568be65d0147cb7810000001",
+    "__v" : 0
+}

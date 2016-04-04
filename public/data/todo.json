@@ -1,0 +1,28 @@
+{
+    "list": [
+        {
+            "id": 1,
+            "todo": "Atender a la señora interesada en los 15 años"
+        },
+        {
+            "id": 2,
+            "todo": "Llamar al equipo de mantenimiento para el lavado de los aires acondicionados"
+        },
+        {
+            "id": 3,
+            "todo": "Revisar las coreografías de los nuevos grupos participantes"
+        },
+        {
+            "id": 4,
+            "todo": "Entregar las entradas del evento"
+        },
+        {
+            "id": 5,
+            "todo": "Desarrollar las tareas del Marketing digital"
+        },
+        {
+            "id": 6,
+            "todo": "Enviar correo de notificación referente a la cancelación de la mensualidad"
+        }
+    ]
+}

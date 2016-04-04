@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+    <!--[if IE 9 ]>
+        <html class="ie9" data-ng-app="easyDance" data-ng-controller="easyDanceCtrl as edctrl">
+    <![endif]-->
+    <![if IE 9 ]>
+    <html data-ng-app="easyDance" data-ng-controller="easyDanceCtrl as edctrl">
+    <![endif]>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>Innova Accounting</title>
+
+        <!-- Vendor CSS -->
+        <link href="dist/vendors.min.css" rel="stylesheet">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/easy-dance.ico"/>
+
+        <!-- CSS -->
+        <link href="assets/css/template.css" rel="stylesheet" id="app-level">
+        <link href="assets/css/easyDance.css" rel="stylesheet">
+		<link href="assets/css/flaticon.css" rel="stylesheet">
+        <link href="assets/css/flaticon_ico.css" rel="stylesheet">
+		<link href="assets/css/flaticon_carga_inicial.css" rel="stylesheet">
+
+    </head>
+
+    <body data-ng-class="{ 'sw-toggled': edctrl.layoutType === '1' , 'modal-open': edctrl.sidebarToggle.left === true, 'fondo_innova': edctrl.$state.includes('login') }" >
+
+
+        <data ui-view></data>
+
+
+        <!-- Older IE warning message -->
+        <!--[if lt IE 9]>
+            <div class="ie-warning">
+                <h1 class="c-white">Warning!!</h1>
+                <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+                <div class="iew-container">
+                    <ul class="iew-download">
+                        <li>
+                            <a href="http://www.google.com/chrome/">
+                                <img src="img/browsers/chrome.png" alt="">
+                                <div>Chrome</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.mozilla.org/en-US/firefox/new/">
+                                <img src="img/browsers/firefox.png" alt="">
+                                <div>Firefox</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.opera.com">
+                                <img src="img/browsers/opera.png" alt="">
+                                <div>Opera</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.apple.com/safari/">
+                                <img src="img/browsers/safari.png" alt="">
+                                <div>Safari</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                                <img src="img/browsers/ie.png" alt="">
+                                <div>IE (New)</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p>Sorry for the inconvenience!</p>
+            </div>
+        <![endif]-->
+
+
+        <!-- Vendors dependencies -->
+        <script src="dist/vendors.js"></script>
+       
+
+        <!-- Placeholder for IE9 -->
+        <!--[if IE 9 ]>
+            <script src="lib/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+        <![endif]-->
+        
+        
+        <!-- App -->
+        <script src="dist/app.min.js"></script>
+
+    </body>
+</html>
+

@@ -1,0 +1,23 @@
+{  
+   "list":[
+        {  
+
+            "id":1,
+            "img": "post1.jpg",
+            "name": "Tango",
+            "range": "$850.00 - $1199.99"
+        },
+        {
+            "id":2,
+            "img": "post2.jpg",
+            "name": "Salsa casino",
+            "range": "$649.59 - $749.99"
+        },
+        {
+            "id":3,
+            "img": "post3.jpg",
+            "name": "Bachata",
+            "range": "$189.99 - $250.00"
+        }
+   ]
+}
